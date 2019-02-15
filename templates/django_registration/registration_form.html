@@ -1,0 +1,79 @@
+{% extends "registration/login.html" %}
+{% load i18n %}
+
+{% block title %} Registro de nuevo usuario {% endblock %}
+{% block content %}
+
+    <div class="container">
+
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3> Regístrate </h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" action=".">{% csrf_token %}
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i> </span>
+                            </div>
+                            <input id="username" type="text" class="form-control" name="username" placeholder="Usuario">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope"></i> </span>
+                            </div>
+                            <input id="email" type="email" class="form-control" name="email" placeholder="Correo Electrónico">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input id="password1" type="password" class="form-control"  name="password1"  placeholder="Contraseña">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input id="password2" type="password" class="form-control"  name="password2"  placeholder="Repita Contraseña">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Adelante!" class="btn float-right login_btn">
+                            <input type="hidden" name="next" value="{{ next }}">
+                        </div>
+                    </form>
+                </div>
+
+            {% if form.errors %}
+                            {% for field in form %}
+
+                                {% for error in field.errors %}
+                                    <div class="alert alert-danger">
+                                        <strong>{{ error|escape }}</strong>  <br>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% for error in form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+
+{% comment %}
+{% block content %}
+    <h2>Registrate</h2>
+    <form method="post" action=".">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans "Sign In" %}">
+    </form>
+{% endblock %}{% endcomment %}

@@ -1,0 +1,44 @@
+
+<!-- bloc-3 END -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %} PiVoz - {{ request.user.username }}{% endblock %}
+
+{% block content %}
+
+    <!-- bloc-3 -->
+<div class="bloc bgc-mint-cream bloc-fill-screen bg-artificial-background-close-up-958168 tc-white-2 l-bloc" id="bloc-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+				<div class="row">
+					<div class="col-sm-12">
+						<a href="{% url 'home' %}" class="btn btn-rd btn-black btn-xl pull-left animated pulse-hvr"><span class="ion ion-android-arrow-back icon-white-2 icon-md"></span></a>
+					</div>
+				</div><img src="{% static "img/lazyload-ph.png" %}" data-src="{{ request.user.avatar.url }}" class="img-circle animated vanishIn mg-sm center-block img-rd-lg lazyload" width="200" height="200" />
+				<h3 class="statement-bloc-text text-center mg-md  tc-white-2 animated vanishIn">
+					<strong> Nombre completo: </strong> {{ request.user.first_name }} {{ request.user.last_name }} <br>
+                    <strong> Correo Electrónico: </strong> {{ request.user.email }} <br>
+                    <strong> Teléfono:</strong> {{ request.user.telefono }}
+                    {% if not request.user.is_staff %}
+                    <strong><i>El Usuario no tiene permisos de administrador.</i></strong>
+                        {% else %}
+                        <strong><i>El Usuario tiene permisos de administrador.</i></strong>
+                    {% endif %}
+				</h3>
+				<p class="text-center animated vanishIn">
+					<strong>{{ request.user.username }}</strong>
+				</p>
+				<div class="row">
+					<div class="col-sm-12">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+

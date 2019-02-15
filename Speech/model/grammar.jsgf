@@ -1,0 +1,19 @@
+#JSGF V1.0 UTF-8 es;
+
+/**
+  * Define los comandos válidos para la aplicación de piVoz
+  *
+  * @author Antonio Maestre Rosa
+  * @version 1.1beta
+  * fecha
+  */
+
+grammar piCommand;
+public <basicCmd> = <command>;
+
+<command> = <action> <object>*;
+<action> = /11/mostrar |/10/(muestra me) |/10/ muestra |/7/ver | enseña | (enseña me) | abre | siguiente | anterior | salir | atrás | adelante | subirvolumen | bajarvolumen | pausa | reproducir | continuar | menuprincipal | menu | fotos | imágenes | fotografías | álbum | album | albumes | radio | videos;
+<object> = [todos los| todas las | los | las | la ] ( /10/fotos | imágenes | fotografías | videos ) [de <keyTag>];
+<keyTag> =  (josé | david | maria | jesús | pedro |edificios | oscuro | casas | carro | caballos | palomas| torre | campo | bosque | carretera | montañas | vías | lago | puente | valle | perro | gato | príncipe | princesa | antoñito | felipe | picoleto | campo | bosque | cracovia | playa | plaza | prueba | pruebauno | tigre | comunión | comunion | tony | tony | tony | nieto | nieto | sara | sara | camas | camas | bengala | bengala | nueva | nueva | york | york | francisco | francisco | animal | animal | edificios | trigo)*;
+
+<keyword> = (hola | hey | oh | que pasa)* (ordenador |  pi |  televisión );

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block pageTitle %}Home{% endblock %}
+
+{% block content %}
+
+<!-- bloc-2 -->
+<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bg-b-edge bloc-fill-screen l-bloc" id="bloc-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2 class="text-center  mg-lg text-w-sm glow-t animated vanishIn none animSpeed3 tc-white">
+							PiVoz
+						</h2>
+{#						<div class="row">#}
+{#							<div class="col-sm-12">#}
+{#								<div class="text-center">#}
+{#                                    <button id="StartButton" class="btn btn-rd btn-glossy btn-xl  btn-electric-lime none animated pulse-hvr" onclick="startRecording(this);"><span class="ion ion-android-microphone icon-md"></span></button>#}
+{#                                    <button id="StopButton" class="btn btn-rd btn-glossy btn-xl btn-danger none animated pulse-hvr" onclick="stopRecording(this);"><span class="ion glyphicon-stop icon-md"></span></button>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+                        <div id="micBtn" class="text-center">
+                            <btn id="startButton" class="animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime" data-toggle="tooltip" title="" data-original-title="Pulsa para empezar a hablar"></span></btn>
+                            <div id="infoBalloon" class="balloon"></div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row voffset-lg animated vanishIn none">
+			<div class="col-sm-4">
+				<a href="{% url "imageGallery" %}"><img src="{% static "img/lazyload-ph.png" %}" data-src="{% static "img/photo.png" %}" class="center-block mg-sm none animDelay06 pulse-hvr lazyload " width="150" height="150" /></a>
+				<h2 class="mg-md text-center tc-white">
+					Fotos
+				</h2>
+			</div>
+            <div class="col-sm-4">
+				<a href="{% url "albumsGallery" %}"><img src="{% static "img/lazyload-ph.png" %}" data-src="{% static "img/photo.png" %}" class="center-block mg-sm none animDelay06 pulse-hvr lazyload " width="150" height="150" /></a>
+				<h2 class="mg-md text-center tc-white">
+					Albums
+				</h2>
+			</div>
+			<div class="col-sm-4">
+				<a href="{% url "videoGallery" %}"><img src="{% static "img/lazyload-ph.png" %}" data-src="{% static "img/gallery.png" %}" class="center-block mg-sm none animDelay06 pulse-hvr lazyload " width="150" height="150" /></a>
+				<h2 class="mg-clear text-center tc-white">
+					Videos
+				</h2>
+			</div>
+			{% comment %}<div class="col-sm-4">
+				<a href="{% url "musicGallery" %}"><img src="{% static "img/lazyload-ph.png" %}" data-src="{% static "img/musical-note.png" %}" class="center-block mg-sm animDelay06 pulse-hvr lazyload" width="150" height="150" /></a>
+				<h2 class="mg-md text-center tc-white">
+					Música
+				</h2>
+			</div>{% endcomment %}
+		</div>
+        
+
+        <div class="text-success" style="visibility: hidden;" >
+            <h2>Recognized audio:</h2>
+            <p>  {{ speech }}</p>
+        </div>
+
+        <form id="uploadAudioForm" method="post" action="{% url "uploadAudio" %}" style="display: none">{% csrf_token %}
+            <input type="file" name="audioBlob">
+        </form>
+
+
+
+        {% comment %}<div class="text-info" style="height: 10px; visibility: hidden">
+            <h2> Recorder Log </h2>
+            <pre id="log"></pre>
+        </div>{% endcomment %}
+
+
+
+	</div>
+</div>
+
+    {% comment %}<script src="{% static "/Recorder/audioRec.js" %}"></script>{% endcomment %}
+<!-- bloc-2 END -->
+{% endblock %}

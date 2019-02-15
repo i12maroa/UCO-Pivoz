@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+
+{#<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>#}
+{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>#}
+<!------ Include the above in your HEAD tag ---------->
+    <!-- JQuery CDN -->
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+
+{#    <!-- Latest compiled and minified CSS -->#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"#}
+{#        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"#}
+{#        crossorigin="anonymous">#}
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+
+
+
+
+    <meta charset="UTF-8">
+    <title>{% block title %}PiVoz Login{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="{% static "css/EleganLoginPage.css" %}">
+
+</head>
+<body>
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="d-flex justify content-center h-10">
+
+            <img class="logo" src="{% static "img/rPiMedia_logo.png" %}" width="250" height="250">
+        </div>
+        <div class="d-flex justify content-center h-10 formerrors">
+            {% if form.errors %}
+                <p>Tu usuario y contraseña no coinciden. Por favor inténtelo de nuevo.</p>
+            {% endif %}
+
+            {% if error_message %}
+               <p>{{ error_message }}</p>
+            {% endif %}
+
+            {% if next %}
+                {% if user.is_authenticated %}
+                    <p> Tu cuenta no tiene acceso a esta página. Para proceder,
+                        por favor, inicia sesión con una cuenta que tenga acceso.</p>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="d-flex justify-content-center h-80">
+        <div id="RFIDText" class="container" style="display: none; ">
+            <p style="font-size: x-large; color: white; position: fixed; top: 60%; left: 26%"> Acerca la pulsera al lector rfid para iniciar sesión</p>
+        </div>
+            <div class="card">
+
+                <div class="card-header">
+                    <h3>Inicia Sesión</h3>
+                    {% comment %}<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>{% endcomment %}
+                </div>
+                <div class="card-body">
+                    <form method="post" action="{% url 'login' %}">{% csrf_token %}
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input id="username" type="text" class="form-control"  name="username"  placeholder="Nombre de Usuario">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input id="password" type="password" class="form-control"  name="password"  placeholder="password">
+                        </div>
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Recuerdame
+                        </div>
+                        <div class="form-group">
+                            <input id="loginBtn" type="submit" value="Login" class="btn float-right login_btn">
+                            <input type="hidden" name="next" value="{{ next }}">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        ¿No tienes una cuenta?<a href="{% url "django_registration_register" %}">Regístrate</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="{% url 'password_reset' %}">¿Has olvidado tu contraseña?</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a id='rfidLogin' href="{% url 'RFIDlogin' %}"> Inica sesión con pulsera</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<script type="text/javascript">
+  $('#rfidLogin').on('click', hideLoginForm);
+  $('#loginBtn').on('click', loginAnimation);
+
+
+  function hideLoginForm(e){
+    e.preventDefault();
+    $('.card').slideUp('slow');
+    $('.logo').addClass('animate');
+    $('#RFIDText').delay(1500).fadeIn(3000, function () {
+        {#$.get( {% url 'RFIDlogin' %} );#}
+        console.log("Hide Login Form function executed");
+    });
+  };
+
+  function loginAnimation(e) {
+      {% if not form.errors %}
+      e.preventDefault();
+      var name = $( "input[name=username]" ).val();
+      $('.card').slideUp('slow');
+      $('.logo').addClass('animate');
+      $('#RFIDText').children("p").text("Iniciando sesión como " + name + "...");
+      $('#RFIDText').delay(1000).fadeIn(3000, function () {
+          $('form').submit();
+      });
+      {% endif %}
+  }
+</script>
+</body>
+</html>
+
+{% comment %}{% if form.errors %}
+        <p class="alert-danger"> Tu usuario y contraseña no coinciden. Por favor inténtelo de nuevo.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p> Tu cuenta no tiene acceso a esta página. Para proceder,
+                por favor, inicia sesión con una cuenta que tenga acceso.</p>
+        {% else %}
+            <p> Por favor, inicia sesión para ver esta página.</p>
+        {% endif %}
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}" style="text-align: center">
+    {% csrf_token %}
+
+    <div>
+        <td> {{ form.username.label_tag }}</td>
+        <td> {{ form.username }}</td>
+    </div>
+    <div>
+        <td> {{ form.password.label_tag }}</td>
+        <td> {{ form.password }}</td>
+    </div>
+
+    <div>
+        <input type="submit" value="Iniciar Sesión">
+        <input type="hidden" name="next" value="{{ next }}">
+    </div>
+
+    </form>
+
+    <p style="text-align: center"><a href="{% url 'password_reset' %}">No recuerdo mi contraseña.</a></p>{% endcomment %}

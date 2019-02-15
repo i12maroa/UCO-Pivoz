@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Load Static Files -->
+    {% load static %}
+
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="shortcut icon" type="image/png" href="{% static "favicon.png" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "/css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/animate.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/ionicons.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/main.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    {% comment %}<style type='text/css'>
+        ul { list-style: none; }
+        #recordingslist audio { display: block; margin-bottom: 10px; }
+    </style>{% endcomment %}
+
+    <script src="{% static "/js/jquery-2.1.0.min.js" %}"></script>
+    <script src="{% static "/js/bootstrap.js" %}"></script>
+    <script src="{% static "/js/blocs.js" %}"></script>
+    <script src="{% static "/js/lazysizes.min.js" %}" defer></script>
+    <script>
+
+        var uploadAudio_url = "{% url "uploadAudio" %}";
+    </script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+    <script src="{% static "js/recorder/dist/recorder.js" %}"></script>
+
+    <title>{% block pageTitle %}{% endblock %}</title>
+
+    <!-- URLS Variables for JS-Django Usage -->
+    <script>
+        var urlImages = '{% url 'imageGallery' %}';
+        var urlVideos = '{% url 'videoGallery' %}';
+        var urlAlbums = '{% url 'albumsGallery' %}';
+        var urlRadios = '{% url 'radios' %}';
+        var urlIndex = '{% url 'home' %}';
+        var urlLogout = '{% url 'logout' %}';
+        var urlProfile = '{% url 'profile' %}';
+    </script>
+
+    <!-- Google Analytics -->
+
+<!-- Google Analytics END -->
+
+</head>
+
+<body>
+
+<!-- Main container -->
+<div class="page-container">
+
+<!-- Block Navbar -->
+{% block navbar %}
+
+<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bg-t-edge l-bloc" id="bloc-0">
+	<div class="container">
+		<nav class="navbar row">
+			<div class="navbar-header">
+				<a class="navbar-brand animated vanishIn" href="{% url 'home' %}"><img src="{% static "img/rPiMedia_logo.png"%}" alt="logo" width="70" height="70" /></a>
+<button id="nav-toggle" type="button" class="ui-navbar-toggle navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+					<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse navbar-1 nav-special sidebar-nav">
+				<ul class="site-navigation nav navbar-nav">
+                    {% if not request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url "login" %}" class="ltc-white animated pulse-hvr">
+                                <span class="ion ion-log-in icon-md icon-mint-cream animated pulse-hvr"></span>
+                                Iniciar Sesión
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if request.user.is_staff %}
+                        <li>
+                            <a href="{% url 'admin:index' %}" class="ltc-white animated pulse-hvr">
+                                <span class="fa fa-gears icon-md icon-white animated pulse-hvr"></span>
+                                Administrar
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <li>
+                            <div class="dropdown btn-dropdown">
+                                <a href="#" class="ltc-white dropdown-toggle animated pulse-hvr" id="pl-12040" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="fa fa-user icon-md icon-white animated pulse-hvr"></span>
+                                    {{ request.user.username }}
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{% url "profile" %}" class="a-btn a-block animated pulse-hvr">Ver Perfil</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'logout' %}" class="a-btn a-block animated pulse-hvr">Cerrar Sesión</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endif %}
+				</ul>
+			</div>
+		</nav>
+	</div>
+</div>
+<!-- bloc-0 END -->
+
+
+
+
+
+</div>
+<!-- Main container END -->
+
+{% endblock %}
+
+
+
+{% block subnav %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+
+
+{% block footer %}
+    <!-- ScrollToTop Button -->
+<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1')"><span class="fa fa-chevron-up"></span></a>
+<!-- ScrollToTop Button END-->
+
+{% endblock %}
+
+
+
+
+</body>
+</html>

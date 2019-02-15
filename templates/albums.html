@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %} PiVoz - Albums{% endblock %}
+
+{% block content %}
+<script>
+
+function startButton(btn) {
+    if (recorder.recording == false) {
+        startRecording(btn);
+    }
+    else {
+        stopRecording(btn);
+    }
+
+}
+</script>
+<!-- bloc-1 -->
+
+<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream" id="bloc-1">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-12">
+				<h2 class="text-center mg-md  tc-honeydew">
+					Albums
+				</h2>
+				<div class="text-center">
+                    <btn id="startButton" class="btn btn-d   btn-lg btn-rd animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime"></span></btn>
+                </div>
+		    </div>
+        </div>
+
+        <div id="errorBalloon" class="balloon">
+        </div>
+
+        <div id="imageGridAll" class="row voffset animated vanishIn" style="padding-top: 9%">
+
+            {% for album in albums %}
+                {% comment %}{% if image.id_multimedia == ""  %}{% endcomment %}
+                <div class="col-sm-3">
+                    <a href="{% url "albumsGalleryDetailView" album.slug %}"><img src="{{ album.thumbnail.url }}" data-src="{{ album.thumbnail.url }}" class="img-responsive lazyload" /></a>
+                    <h3 class="mg-md tc-mint-cream">
+                        {{ album.titulo }}
+                    </h3>
+                    {{ album.descripcion }}
+                    {% if album.address %}
+                    <div class="description">
+                       <i class="fas fa-map-marked-alt"></i> Ubicación: {{ album.address }}
+                    </div>
+                {% endif %}
+                </div>
+            {% endfor %}
+
+		</div>
+
+
+
+		</div>
+
+	</div>
+
+
+
+</div>
+<!-- bloc-1 END -->
+
+        <div class="text-success" style="display: none;">
+            <h2>Result</h2>
+            <pre id="result"></pre>
+
+        </div>
+
+{% endblock %}

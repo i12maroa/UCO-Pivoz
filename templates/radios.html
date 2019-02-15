@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %} PiVoz - Música{% endblock %}
+
+{% block content %}
+
+    <!-- bloc-6 -->
+    <div class="bloc bgc-mint-cream animated vanishIn none bg-pexels-photo d-bloc bloc-bg-texture texture-geometry-shapes bloc-fill-screen " id="bloc-6">
+        <div class="container">
+            <div class="row">
+                {% for radio in radios %}
+                    <div class="col-sm-4">
+                        "<img src="{% static "img/lazyload-ph.png" %}" data-src="{{ radio.thumbnail.url }}" class="img-circle img-rd-md animated pulse-hvr lazyload" width="300" height="300" />
+                        <audio controls>
+                            <source src="{{ radio.url }}">
+                        </audio>
+                        {% comment %}<h3 class="text-center mg-md tc-black">
+
+                        </h3>{% endcomment %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- bloc-6 END -->
+{% endblock %}
+
+{% comment %}
+<audio id="jp_audio_1" preload="metadata" src="http://playerservices.streamtheworld.com/api/livestream-redirect/LOS40.mp3"></audio>{% endcomment %}
+
+

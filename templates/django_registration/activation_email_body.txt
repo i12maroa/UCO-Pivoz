@@ -1,0 +1,8 @@
+{% load i18n %}
+{% trans "Activate account at" %} {{ site.name }}:
+
+{{ scheme }}://{{ site.domain }}/accounts/activate/{{ activation_key }}
+
+{% blocktrans %}Este enlace es válido por {{ expiration_days }} días.</br>
+Este es un mensaje enviado automaticamente. Por favor no responda a esta direccion de mail.{% endblocktrans %}
+

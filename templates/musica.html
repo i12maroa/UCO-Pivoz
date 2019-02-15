@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %} PiVoz - Música{% endblock %}
+
+{% block content %}
+    <!-- bloc-5 -->
+    <div class="bloc bgc-mint-cream bloc-fill-screen bg-pexels-photo l-bloc" id="bloc-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="{% url "playlist" %}"><img src="{% static "img/lazyload-ph.png" %}" data-src="{% static "img/playlist.png" %}" class="img-circle img-rd animated bounce-hvr center-block lazyload" width="200" height="200" /></a>
+                    <h2 class="mg-md  tc-cadmium-red text-center">
+                        Playlists
+                    </h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="{% url "radios" %}"><img src="{% static "img/lazyload-ph.png" %}" data-src="{% static "img/boombox-3.png" %}" class="img-circle img-rd center-block animated bounce-hvr lazyload" width="200" height="200" /></a>
+                    <h2 class="mg-md  tc-cadmium-red text-center">
+                        Radio FM
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bloc-5 END -->
+
+{% endblock %}

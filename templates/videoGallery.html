@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %} PiVoz - Galeria Multimedia{% endblock %}
+
+{% block content %}
+
+
+<!-- bloc-4 -->
+<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken l-bloc" id="bloc-4">
+	<div class="container">
+		<div class="row" style="margin-top: 10px">
+			<div class="col-sm-12">
+				<h2 class="text-center mg-md  tc-honeydew glow-t mg-clear">
+					Videoteca
+				</h2>
+        </div>
+
+        <div class="row" style=" margin-top: 5%">
+            <div id="micBtn" class="text-center">
+                    <btn id="startButton" class="animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime" data-toggle="tooltip" title="" data-original-title="Pulsa para empezar a hablar"></span></btn>
+                <div id="infoBalloon"></div>
+                </div>
+		    </div>
+        </div>
+
+
+
+        <!-- Grid de videos -->
+
+        <div id="VideoGrid" class="row voffset animated vanishIn">
+            {% for video in videos %}
+                <div class="col-sm-3">
+                    <div class="embed-responsive embed-responsive-16by9 animated swing-hvr">
+                        <a href="#" data-lightbox="{{ video.fichero_video.url}}"  data-frame="fullscreen-lb" data-gallery-id="gallery-1"></a>
+                            <video controls class="embed-responsive-item lazyload" data-src="{{ video.fichero_video.url }}">
+                                Your browser does not support HTML5 video.
+                            </video>
+
+                    </div>
+                    <h3 class="mg-md tc-mint-cream">
+                        {{ video.titulo }}
+                    </h3>
+                    <p style="color: white">
+                        {% for key in video.keyword.all %}{{ key }}{% if not forloop.last %} - {% endif %}{% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+
+		</div>
+
+	</div>
+</div>
+
+<!-- bloc-4 END -->
+
+    <script>
+
+    $(document).ready(function () {
+        $('video:first').addClass('focus');
+    });
+
+    $('video').bind('play', function () {
+        activated = this;
+        $('video').each(function () {
+            if(this != activated) this.pause();
+        });
+    });
+
+
+    </script>
+
+{% endblock %}
