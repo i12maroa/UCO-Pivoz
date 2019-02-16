@@ -23,7 +23,7 @@ function startUserMedia(stream){
     /*__log('Media stream created.');*/
     //Inicializamos el recorder y le pasamos el stream de audio que creamos previamente para que lo use para grabar
     recorder = new Recorder(input);
-    detecteSilence(stream, onSilence, onSpeak, 500, -50);
+    detecteSilence(stream, onSilence, onSpeak, 500, -70);
     /*__log('Recorder initialised');*/
 }
 

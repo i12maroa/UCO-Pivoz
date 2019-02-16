@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="476b5f67-bf9c-42de-81b3-2e96a32c610a" name="Default" comment="" />
+    <list default="true" id="476b5f67-bf9c-42de-81b3-2e96a32c610a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/speech.wav" beforeDir="false" afterPath="$PROJECT_DIR$/media/speech.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +27,11 @@
     <session id="-78765406">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="82" />
+          <entry key="project.closed" value="84" />
           <entry key="project.open.time.10" value="12" />
-          <entry key="project.open.time.11" value="13" />
+          <entry key="project.open.time.11" value="14" />
           <entry key="project.open.time.12" value="10" />
-          <entry key="project.open.time.13" value="7" />
+          <entry key="project.open.time.13" value="8" />
           <entry key="project.open.time.14" value="5" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="5" />
@@ -39,7 +44,7 @@
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="19" />
-          <entry key="project.opened" value="85" />
+          <entry key="project.opened" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -85,7 +90,7 @@
           <entry key="dict" value="220" />
           <entry key="dummy" value="14" />
           <entry key="html" value="9966" />
-          <entry key="js" value="14203" />
+          <entry key="js" value="14204" />
           <entry key="jsgf" value="593" />
           <entry key="json" value="55" />
           <entry key="py" value="33305" />
@@ -98,7 +103,7 @@
           <entry key="CSS" value="1697" />
           <entry key="HTML" value="9993" />
           <entry key="JSON" value="55" />
-          <entry key="JavaScript" value="14176" />
+          <entry key="JavaScript" value="14177" />
           <entry key="PLAIN_TEXT" value="999" />
           <entry key="Python" value="34430" />
           <entry key="SCSS" value="207" />
@@ -146,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/js/recorder/recorderJS_example.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="275" column="72" selection-start-line="275" selection-start-column="24" selection-end-line="275" selection-end-column="72" />
+            <state relative-caret-position="604">
+              <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -262,7 +267,7 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/MFRC522-python" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -315,9 +320,9 @@
         <option value="$PROJECT_DIR$/Galeria/views.py" />
         <option value="$PROJECT_DIR$/Galeria/models.py" />
         <option value="$PROJECT_DIR$/Galeria/admin.py" />
-        <option value="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" />
         <option value="$PROJECT_DIR$/templates/fotos.html" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
+        <option value="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" />
       </list>
     </option>
   </component>
@@ -348,7 +353,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -472,6 +476,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,7 +488,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -622,7 +627,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.1930533" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.19789983" />
       <window_info id="Structure" order="1" sideWeight="0.5014006" side_tool="true" weight="0.22374798" />
       <window_info id="Favorites" order="2" sideWeight="0.50091076" side_tool="true" weight="0.14378029" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -677,6 +682,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/MFRC522-python" />
+    </ignored-roots>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Galeria/SimpleMFRC522.py">
@@ -984,8 +994,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/recorder/recorderJS_example.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="275" column="72" selection-start-line="275" selection-start-column="24" selection-end-line="275" selection-end-column="72" />
+        <state relative-caret-position="604">
+          <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
         </state>
       </provider>
     </entry>
