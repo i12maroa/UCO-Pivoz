@@ -352,7 +352,7 @@ function anteriorImagen(){
 }
 
 function verImagen() {
-    var video = $('video.focus').prev();
+    var video = $('video.focus');
     if ($('video.focus').hasClass('focus')){
         lightBox(video);
     }
@@ -427,7 +427,6 @@ function addFilterImages(objects) {
         var elKey = document.createElement("p");
         var elA = document.createElement("a");
         elA.href = "#";
-        elA.dataset.caption = objects[i].titulo;
         elA.dataset.lightbox = objects[i].src;
         elA.dataset.galleryId = "gallery-1";
         elA.dataset.frame = "fullscreen-lb";
@@ -439,6 +438,7 @@ function addFilterImages(objects) {
             elImg.src = objects[i].src;
             elImg.dataset.src = objects[i].thumbnail;
             elImg.className ="img-responsive lazyload pulse-hvr animated";
+            elA.dataset.caption = objects[i].titulo;
             elA.appendChild(elImg);
         }
         else if (objects[i]['type'] == "video")
@@ -453,6 +453,7 @@ function addFilterImages(objects) {
             elVid.autoplay = "";
             elVid.dataset.src = objects[i].src;
             elVid.dataset.lightbox = objects[i].src;
+            elVid.dataset.frame = "fullscreen-lb";
             elVid.src = objects[i].src;
             elVid.textContent = "Your browser does not support HTML5 video.";
             elA.dataset.autoplay = 1;
