@@ -1,894 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="476b5f67-bf9c-42de-81b3-2e96a32c610a" name="Default" comment="Update Mapping Directory.">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="476b5f67-bf9c-42de-81b3-2e96a32c610a" name="Default" comment="Update Mapping Directory.&#10;&#10;### Admin.py ###&#10;&#10;+ Add g">
+      <change beforePath="$PROJECT_DIR$/.idea/PiVoz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiVoz.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Galeria/SpeechDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/SpeechDetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galeria/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galeria/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galeria/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galeria/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Galeria/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/validators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Galeria/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PiVoz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiVoz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiVoz/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiVoz/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Speech/model/es.dict" beforeDir="false" afterPath="$PROJECT_DIR$/Speech/model/es.dict" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Speech/model/grammar.jsgf" beforeDir="false" afterPath="$PROJECT_DIR$/Speech/model/grammar.jsgf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_05rQhtN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0A65fa4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0Gi33AP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0HnLH8h.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0LxjmLE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0PWKVim.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0eZZq9s.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0f0Rwkd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0gRKBWN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0hlatyE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0iQtupy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0iSyUxW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0ndB5UA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0rzohcD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0t04Yl5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0ulGRZS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_0yuKteT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_19J5SWD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1BmZdcw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1Dokvgn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1K70AGw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1MUcPhb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1Mm58Um.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1OLUksX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1Rxjd6c.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1YFnnTl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1YSYN1v.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1YexYi1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1cc90pE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1efSUwh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1eqdEnD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1fSxGZ8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1fV1RBy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1lsOhCW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1sfMRGH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_1w3eUDo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2KqCapV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2N6I1wy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2PMQDKG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2QAtIH8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2QAyfE2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2TR5T2G.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2UOYUYR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2iPsKVl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2kQfanp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2lhcY4s.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2pl7evT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2snPcqR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2wKCEzB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_2z1qBMu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_31BvJj9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_343PDHS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_38oJagG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3DkUyjy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3IcJXn1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3KW6Xv8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3LcyWFB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3PIawPx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3S069C0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3ZR9Xey.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3slqvug.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3vE1fDc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3vMTR6G.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_3x9QNXm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4DiQXas.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4PDMGmB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4aOItNN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4f9c4Rr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4iZqSZu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4mvIjaF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4n1iMLR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4pqIMjM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_4wwMkCY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5D3EMAL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5FKor3K.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5IpADlF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5L7MX4G.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5PBaloF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5PhtNVq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5Tuk3qO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5Y048LP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5eJ4Czs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5ebUsa3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5flrzEK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5irtpsw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5mdtipS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5s26neF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5sQnXrZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_5wy6BXr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_62XIiYM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_653BIUi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_65b1h3k.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_66CFM5s.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6D10qYv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6MjWaNn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6OCwMuW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6RE0Sah.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6XUedFO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6mjlncJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_6t6nCHo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_71pb5Ay.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_77UjCaM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7D1hGaH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7EkENI6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7J27NCC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7KhKtV7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7PQrey0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7TRLXuI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7XOIJNL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7Z73Ihb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7ZuyyzP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7dYDGud.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7nCgWML.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7tT1IRn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7wfNhgy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7xa3TaX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_7xi1MuE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_870iHYO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8Avr0q8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8FJqsXf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8G2pJI1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8HRyUHx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8VDnwHl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8XKI0yp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8cWzz6h.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8jMcpoC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_8supzrK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_905pe1m.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_90AN6vQ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_92XESUm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_95Z2cYn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9DvXxb1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9GZAs3E.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9NDlviB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9RWChZF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9S9F6UI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9VixguR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9cIA0W2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9duGBBA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9rcb5Hg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9td1HcI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9xIH0qR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_9xaNXD1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_A8RGV8p.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_A8TZmQF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_A8ZqpXs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_A9Udo3M.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AMWYa66.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AT3JtSz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AUiWNPi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AVIrlEg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AY4CKlV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AYxx4Qg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AZRaHcR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AaQPrfE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AfpPMe3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AhOlHEK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AlSJuEI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AthtN1y.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_AzEDA0r.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_B0PUYh3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_B0PZklc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_B79qFEE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_B8VZwBE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BFknJxW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BJb4Mll.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BNuDG2n.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BRlJ5Zd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BayX5t8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Bc1r5JF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BcsiFnr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BfXEEHX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Bg6pfnd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BnZacEm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Brlouuo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BzXdccN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_BzYBDnZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_C3B3iWY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_C9B5QU1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CATDE9Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CFwrgvG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CMGCd1d.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CVqZHQi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CqoKsrX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CzJFKwS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_CzPItZN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_D2SZo50.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_D9TU554.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_D9jql0H.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_DCNGdLd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_DK41uG6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_DKL9Mqi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_DNthDw4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_DRCz0o6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Dat6JuO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_DiT0Q6S.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Duka39f.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_E6VZNGP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EIc8u8n.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EIkElRD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ELEelpC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ELMAgtX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ELx5kvR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EMvrEAE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EVdeoAi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EYmfM1W.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EahEkI7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EbZrjpo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EjHkWl6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EjXsXtF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Eq7LRyo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ErxrZh0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EsjzVud.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EvdoYcc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_EzZzvps.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_F4tRhHo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_F5cM4nO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_F6nzvea.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FCnoQAg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FFC8b8Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FNigkAg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FQ599gD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FXOtqdp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FZJwsDC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FZXouzg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FerQ0ND.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FgYntzU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FsyMh9H.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FvPkOGe.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_FxSr7Tr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_G3lPFYf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_G8TB1JZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GBK3P9i.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GGTfNxL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GQQl5hV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GXE7iof.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GaE71s4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GeDpgEh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GenDYdL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GhLaaTq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Gk64RZq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GohenLU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Gq30gJK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_GsdgaUl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_H3wtPez.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HHbPdNq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HT2NW1s.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HVQKBG8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HY3gDkW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HaIR12k.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HajubjE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Hd0Kf2m.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HefnaSb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Hh2W8bj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HqXvtbr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Hr4yo2b.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HtYU9yN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HxTEyIW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_HyFY8Mu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_INBFf4S.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_IY2LvqZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_IbTlrPp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Ig6Sjnp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_IhGywq9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Iox7vxt.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_IrL9zsC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ItbWFXj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_J0JHviZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_J43ldHq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JCjc6jn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JDK4fXv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JDVd7aw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JHfAazR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JP1iQ79.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Jamk7Bv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Jgn9dbS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JmtdxAK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_JyNIudY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_K0rzGBy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_K89DpBO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KDxpo1b.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KDz3CYm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KGGjzo5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KKL32Bg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KNJHi05.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KPHkl0I.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KVfKXQz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KbEHoav.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KiMJl3H.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KmQbSXe.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Kp6Veq7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KvXCrra.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_KzkSGwq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_L2FEKLx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_L3JZ20g.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LCwE5L6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LHJov9S.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LJ0CGjZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LgMlMQH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LgkmX3z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LhYlXCm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LmS1FWE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LpB2APh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_LpTxafw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_M21FRri.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MDWBsRN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MH6VOMX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MMqGWZr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MO1wRmu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MWlutZP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MdA1nCv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MdYDXnr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MhcLERE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MnMxWU6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Mo5mWd0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MtFXB8h.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MwnvDgX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MwtlsaB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_MyUJ77R.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_N8XmuW7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NBlJN8f.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NIG0IXu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NNerOF3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NS7iUbl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NWDl6I6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NXnUStJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NYsVIc5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Nb1kAU0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NbjyHyr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NgVswvK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NhyEW8i.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NjGWSzh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NlcxEPy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NpHVA3R.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NpWE1N3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NqAGzKw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NrJkeXF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_NzekHws.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_O4YqyT7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_O74rb7b.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OB8UIW0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OEdxuAW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ORh0qKM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Oc2rsPO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OkSejYO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OmUjo7A.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Op5Kesu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OsdnrHh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Ot806jh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OtN4axj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_OvXEwVK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_P6OmToI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_P85hno6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_PQdQrIK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_PXNSv62.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Pn0F1sK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Pod3gCi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_PsKWPfr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_PuJSdxV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_PwkVv03.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Px0gkGR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QBLR0ZX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QPwNwCM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QRX06pG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QSSV5RG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QTvsyl8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QUVcgOn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QnQGWgJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QuxNMEY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_QvY4WkF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_R2Qwnvc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_R2TH6fS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_R6i6GWD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_R8fAuiq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RDT9YWi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RDfVCFF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_REoOPRa.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ROeZGUz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RRU27Dr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RTPPD0m.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RUy9gAM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RlvfwkY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RmN1Ydw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RmWHWaD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RnjgeUv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RpKkVqc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Rq8KBeq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Rrbnv0C.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RtrNruq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_RyE3OyT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_S3EY0xJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_S7DFCEm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_SDurgfY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_SIkaagH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_SOHBzmx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ScUIUv3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Sk4uRT3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_SocE1Hk.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_SpFHxpf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_T4gJ3By.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TBZorU2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TI3RZ3Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TJoy0d3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TPQSkO2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TQjiZ6T.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TTEhWOQ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Tb31BwE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Td62jqd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TnkTbU0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TnwyJgX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TqpmLyE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_TsVD2VF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_U37CjtD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_U4SquAv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_U83HF39.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UHXGcGf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UKfRn30.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UQRiEt5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UbRhUMu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UcgyYKX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UmkyTwO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Unmz2xi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UolCyTU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UtB3Wt8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UtjX6Up.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Uw05SkL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_UwkvLT4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VEIRw7U.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VFTr1g6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VWEponB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VbD5yQm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VdHzGe6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Vh5BBHL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Vj9DUcq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VlyGzfS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VufTheR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VvxCgsY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_VyQChqb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_W2FhhsT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_W4uut1g.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_W5b2Uyy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_W7M7Rg4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WCS7aXK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WJKcbIs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WMGUTvK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WMMPRgD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WPxdEFj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WQaiR7k.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WVDBtz6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WX9xI6H.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WiPKzqs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_WlLsBWt.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_X4NcFes.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_X7W9vkg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XDaUPpi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XDpXHs0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XFqeQ2u.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XIy5ahK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XJfiup2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XMKeep0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XMzmxRo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XN7uoay.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Xc5EQMX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Xd8U4Hf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Xdtq61Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XmESBsr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XqYNM2R.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_XseIqWC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Y59aeVT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YAHVmLR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YDQDkEh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YFVCkHp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YL7sKPX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YMzZUo5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YN8N4ju.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YT3n3P4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YT5WAI1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YUFp1Js.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YZWAKoc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Yb1X1fS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Yftyifa.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YknpaVM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YkxCT62.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YqFQhDm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YsTOWbV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_YwGpExe.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Yxe2iZm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Yy8pbcf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Z9HIaM5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZB3UnSP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZCoWRH2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZI9TAiM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZIvr8cT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZNKsJ50.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZPAHkig.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZQKhjy5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZTuYNrR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZYygT3C.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZcEVt67.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZeOYgiK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_Zf9RI36.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZtINPIV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ZyVfKOT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_a18Ldrj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_a7woQQP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aO2YWr7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aPGFBff.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aPvWVci.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aQd6121.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aU5ArDA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aWjot9Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aZ5w4rO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_aj6CU7s.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_akBCMm0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_al5uZ8G.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bJF2DLI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bM6NqH3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bPryN9Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bQvEJZl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bU0bLz5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bZypF14.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bovLDaJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bppG5MU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_buU1Q7Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_bvCI6Sv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cHVKWft.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cItNHtg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cSXXVwl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_caR5ZmB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cbWx9cL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cezm8G0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cjStwYg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_co0Ga1M.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cpAP8N4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cytg0pZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_cz0BB9S.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_d0xUjjB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_d33apkc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_d6DXJOx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dILty3C.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dM0srhl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dMpH7ee.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dOdYJ3z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dQBp4Yv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dVvtBfD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dc5JOmS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dckQLog.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dgCqPwi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_djClBdO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dkLBKep.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dnqQ6EP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_drpKD62.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dtvASmw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_duSBrXO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dzVb1QM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dzfZJpt.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_dzi5omv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_e2xP1I7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_e3ft7sq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_e4XBSx2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_e730LbS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_e8KcrCI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_eB1NslG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_eZ2s4Vp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ebDUc0L.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ecVeU6N.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_edl3Uq5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ekmKtjl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_enFGSa6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_enjXXzc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_eoz3SDo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_epbvYiU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_eppPhrH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_etbRfb5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_exHn9Qf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_eyXJcIH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_f7Knfz6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fCFEzRl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fI3Pnlv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fL4LYjC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fOAvcQl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fRgd9PA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fTuI0Mq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fXzDrbp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fYob15Y.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fdoUvBZ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_fpLMHK4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ft2zniJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_g3MYDP5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_g8HtRgY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gAOvKVz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gEijNoP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gWKQT1H.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gbDgubG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gbZ3FQQ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gblqMHN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gnPoDLq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_grH9SM8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_grRggG7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_gua9Wuy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_h0NNFys.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_h0cibE8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_h4OkICm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hHf8vJ7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hIuYi99.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hJkFiwI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hMnrkQH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hPeNBSw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hSfshWl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hYa5drF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hb60Yru.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hfT4g0L.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hg1IUqC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hrXRNmT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hrsuld8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_htO8ZSE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_htz1G6h.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_hxd7iKP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_i12MFoj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_i1CQrpP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_i2VupZ0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_i6hLXjN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_iCucFHJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_iNPhX5z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ifiP0ha.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_igNeWKi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_iiim4B7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ip4ufx2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ivAii2N.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_j0FZx5T.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_j0kvzos.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_j36IxlE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_j5jzT84.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_j8Lu3H1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jB8ib5M.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jCwFKXX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jG7h6Ij.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jT0Ab8L.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jVX6uSf.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jYrv2yQ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jZHD9rj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jauyFrk.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jc5Imnk.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jiPmk5t.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jk7e3Gl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jmqd3oB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jsgpCOM.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jt39vPQ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_jx5RyGa.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_k2fekfn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_k3PCM1q.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_k6A91n3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kDrr1HN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kFiVWk5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kMStk5i.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kOOBhqc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kVxS21e.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kWe5Bh5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kcHztPc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kfqQFvU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kj23oxu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_klep0hR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_knBS7gv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_kq0PeQm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_l1eYS10.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_l63C6VP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_l6DWKC3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lCBkFz4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lCslYiU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lE0yh60.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lSskGz4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lUFp96l.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lXD3Pkp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_laEFzDd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lax8BNy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lgirb8b.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ltEZXke.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_lwMJAfz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_m8GwA6O.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_m8KPcHN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_mHFTT5k.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_mLOu3Eq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_mau9fvD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_moZEKdY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_n1WXdEr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_n70kujs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nD8e4db.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nMm4gw9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nO49fzg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nOnKkrj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nUGmN2O.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nUisExJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nVxLhpt.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nYgH8yh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nbOH725.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nbx46Yn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nptHszB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nqpg0Kd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nuEktmP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nw9qUbi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_nzHHrkh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_o6chXmH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_o8DPTFY.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_oEEyWmG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_oIn48el.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_oLsRDKp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_oVHU5P6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_odzq26w.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_omQqLn6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_onjLjF3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_owA9fNv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_oxjGISO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_p3fy4Ll.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_p5GA2rH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_p6likiE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_p7okg9c.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pLfMl9l.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pNDVYzz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pNnlZqs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pRl4ela.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pU4eMVI.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pUu1vIh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pZ7NuAd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_pdjEL1t.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_psVyyuR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_punFSdB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_q7ZjGGA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_qIaLFdF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_qPYKIQv.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_qRV3x2h.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_qTPNGhr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_qulQ9Oh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_qwDFLbD.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_r71Rjso.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rN2ENHm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rNVRF8A.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rRaX2oi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rS3fykr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rUyFTi1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rboEMRg.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rcB1TPp.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rebDjpF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rhgUSln.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rlzhncx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rq1lBFL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_rtTldYb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ry1ycM7.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_s6kQp42.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_s9Uh0kz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sDGFdrh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sDb516A.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sLuoi3m.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sO2EMUs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sPIl9u4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sRnEcAj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sUMfgD3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sUntqoC.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sdqfpSd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sdtDrRV.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_seNl6Gb.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_segwB0Z.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_sfA8lAw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_skNQWvy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_t0d6U8x.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_t1F8gtl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_t2AQfoU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_t2HBI6B.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_t5Flt64.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_t6SGUw6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tAhNaKW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tDCkcSF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tDRNoI4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tHctTRT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tLElDWc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tMya0J4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tPfUb90.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tUaPRij.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tclqaDR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tjscjIj.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_tmSldZS.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_twX4mH0.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_twpPqaW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_txf1rJ6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_txyEutx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uJVnn1G.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uKtM8Zi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uLPXZEx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uLwtWfJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uO2HAjW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uODwkRh.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uSktLIq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ucs6dyH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ueNnkGK.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uiFgrHn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_us7IWtz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_uwwTbY6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_v3niy1k.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vAA18tF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vBfaCPU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vEaEJgi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vJwZyUd.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vKnto7B.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vOCMIXX.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vSaRIqt.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vV9bG9s.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vVIJiv3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vX8fuqJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_var3REr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vb9TAgn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vbJgIe4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vsFFnuT.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vun9iba.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_vx2uM2f.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wCzjKl6.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wDPyMDa.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wHIcnxz.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wIK5gYB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wNP7vAr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wRAoZJ8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wWQjy8h.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wZvjIf3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_waAA5HQ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wdjbxqo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wjJxhpn.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wnrBsQk.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_wzBP0yw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_x4QolRi.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_x4yU7Q9.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_x6ADBDl.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_x6wicCL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xC0h4XJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xDpxzFc.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xF1Kcya.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xHhOCDP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xJSWijR.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xchjdf3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xdDuTWx.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xgsJ9rr.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xhlmxtG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xozNNhs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xvn4OKu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xy8YM33.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xyibYCN.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_xzl9F57.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_y2bbsxA.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_y6mDwzw.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_y7EBMtH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_y9PdMJU.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yCC2t3d.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yQiiBYy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yRayBxP.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yTfdQkE.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yWNvst8.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yewGNNB.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yfkgnrF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ymS1hHL.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yoHNb8D.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_ypFY7N4.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yqz0fuo.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yxzdQaJ.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_yyyiXwH.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_z5AzJ1X.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_z7N0m1N.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_z99xG6I.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zHqiQWG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zRO4hRF.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zSBNq9C.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zW5OOqW.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zbNvI8W.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zca3thq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zegvEwO.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zgCO5wq.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zhFNf34.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/speech_zpd68ZR.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/files/img/atardecer_playa_tcm49-190708.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/runtime.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -911,14 +43,14 @@
     <session id="-78765406">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="85" />
-          <entry key="project.open.time.10" value="14" />
-          <entry key="project.open.time.11" value="14" />
+          <entry key="project.closed" value="93" />
+          <entry key="project.open.time.10" value="16" />
+          <entry key="project.open.time.11" value="16" />
           <entry key="project.open.time.12" value="10" />
-          <entry key="project.open.time.13" value="8" />
-          <entry key="project.open.time.14" value="5" />
+          <entry key="project.open.time.13" value="9" />
+          <entry key="project.open.time.14" value="6" />
           <entry key="project.open.time.15" value="2" />
-          <entry key="project.open.time.16" value="5" />
+          <entry key="project.open.time.16" value="7" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -928,72 +60,76 @@
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="19" />
-          <entry key="project.opened" value="89" />
+          <entry key="project.opened" value="97" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JPG" value="2" />
-          <entry key="Procfile" value="1" />
+          <entry key="Procfile" value="3" />
           <entry key="bin" value="1" />
-          <entry key="css" value="60" />
+          <entry key="css" value="61" />
           <entry key="dic" value="1" />
-          <entry key="dict" value="16" />
+          <entry key="dict" value="17" />
+          <entry key="django-admin" value="1" />
+          <entry key="gitattributes" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="107" />
+          <entry key="groovy" value="1" />
+          <entry key="html" value="109" />
           <entry key="jpg" value="7" />
-          <entry key="js" value="37" />
-          <entry key="jsgf" value="15" />
+          <entry key="js" value="39" />
+          <entry key="jsgf" value="18" />
           <entry key="json" value="8" />
           <entry key="map" value="2" />
           <entry key="png" value="1" />
-          <entry key="py" value="225" />
+          <entry key="py" value="266" />
           <entry key="scss" value="25" />
           <entry key="tmp" value="1" />
           <entry key="ts" value="1" />
-          <entry key="txt" value="11" />
+          <entry key="txt" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="60" />
+          <entry key="CSS" value="61" />
           <entry key="Dictionary" value="1" />
-          <entry key="HTML" value="107" />
+          <entry key="HTML" value="109" />
           <entry key="Image" value="10" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="37" />
-          <entry key="PLAIN_TEXT" value="46" />
-          <entry key="Python" value="225" />
+          <entry key="JavaScript" value="39" />
+          <entry key="PLAIN_TEXT" value="56" />
+          <entry key="Python" value="267" />
           <entry key="SCSS" value="25" />
+          <entry key="Scratch" value="1" />
           <entry key="SourceMap" value="2" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Django Console" value="1125" />
-          <entry key="Procfile" value="1" />
-          <entry key="css" value="1697" />
-          <entry key="dict" value="236" />
+          <entry key="Django Console" value="1993" />
+          <entry key="Procfile" value="6" />
+          <entry key="css" value="1698" />
+          <entry key="dict" value="361" />
           <entry key="dummy" value="15" />
           <entry key="gitignore" value="24" />
           <entry key="html" value="9966" />
-          <entry key="js" value="14248" />
-          <entry key="jsgf" value="633" />
+          <entry key="js" value="14268" />
+          <entry key="jsgf" value="770" />
           <entry key="json" value="55" />
-          <entry key="py" value="34463" />
+          <entry key="py" value="36628" />
           <entry key="scss" value="207" />
-          <entry key="txt" value="214" />
+          <entry key="txt" value="383" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1697" />
+          <entry key="CSS" value="1698" />
           <entry key="HTML" value="9993" />
           <entry key="JSON" value="55" />
-          <entry key="JavaScript" value="14221" />
-          <entry key="PLAIN_TEXT" value="1123" />
-          <entry key="Python" value="35588" />
+          <entry key="JavaScript" value="14241" />
+          <entry key="PLAIN_TEXT" value="1559" />
+          <entry key="Python" value="38621" />
           <entry key="SCSS" value="207" />
         </counts>
       </usages-collector>
@@ -1001,13 +137,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Galeria/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galeria/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="195" column="50" lean-forward="true" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
+            <state relative-caret-position="-1473">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
+                <element signature="e#0#56#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1016,12 +152,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Galeria/SpeechDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+            <state relative-caret-position="299">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#47#73#0" expanded="true" />
-                <marker date="1550367774754" expanded="true" signature="1050:1059" ph="..." />
-                <marker date="1550367774754" expanded="true" signature="1439:1486" ph="..." />
+                <marker date="1550676793767" expanded="true" signature="1050:1059" ph="..." />
+                <marker date="1550676793767" expanded="true" signature="1439:1486" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galeria/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1030,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PiVoz/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+            <state relative-caret-position="690">
+              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
               <folding>
                 <element signature="e#306#315#0" expanded="true" />
               </folding>
@@ -1040,31 +188,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiVoz/wsgi.py">
+        <entry file="file://$PROJECT_DIR$/Galeria/signals.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="12" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="598">
+              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding>
-                <element signature="e#221#230#0" expanded="true" />
+                <element signature="e#0#59#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/js/recorder/recorderJS_example.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10465">
-              <caret line="455" column="50" selection-start-line="455" selection-start-column="50" selection-end-line="455" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/fotos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1311">
-              <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -1072,8 +202,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Speech/model/grammar.jsgf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="368">
+              <caret line="16" column="61" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Galeria/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1101">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+                <marker date="1550806525727" expanded="true" signature="2563:2566" ph="..." />
+                <marker date="1550806525727" expanded="true" signature="3004:3006" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Galeria/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="441" column="46" selection-start-line="441" selection-start-column="46" selection-end-line="441" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+                <marker date="1550806525721" expanded="true" signature="5140:5146" ph="..." />
+                <marker date="1550806525721" expanded="true" signature="8246:8252" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1081,17 +239,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Speech/model/es.dict">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540845">
-              <caret line="23515" column="16" selection-start-line="23515" selection-start-column="16" selection-end-line="23515" selection-end-column="16" />
+            <state relative-caret-position="540914">
+              <caret line="23518" column="18" selection-start-line="23518" selection-start-column="18" selection-end-line="23518" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PiVoz/views.py">
+        <entry file="file://$PROJECT_DIR$/Galeria/validators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+            <state relative-caret-position="552">
+              <caret line="27" column="90" selection-start-line="27" selection-start-column="90" selection-end-line="27" selection-end-column="90" />
+              <folding>
+                <element signature="e#17#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1110,36 +271,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$('video.focus')</find>
-      <find>bajar</find>
-      <find>bajarvolumen</find>
-      <find>fotos</find>
-      <find>imágenes</find>
-      <find>fotografías</find>
-      <find>álbum</find>
-      <find>albumes</find>
-      <find>radio</find>
-      <find>videos</find>
-      <find>pausa</find>
-      <find>path</find>
-      <find>continuar</find>
-      <find>focusImage</find>
-      <find>ver</find>
-      <find>verIma</find>
-      <find>verImagen</find>
+      <find>127</find>
+      <find>12</find>
+      <find>celer</find>
+      <find>lisboa</find>
+      <find>ch</find>
+      <find>slug</find>
+      <find>save_model</find>
+      <find>paloma</find>
+      <find>imagen</find>
+      <find>get_field</find>
+      <find>get_</find>
+      <find>palomas</find>
+      <find>23</find>
+      <find>menu</find>
+      <find>volumen</find>
+      <find>vol</find>
+      <find>b o l</find>
+      <find>subir</find>
+      <find>obstrucción</find>
+      <find>Keyword</find>
+      <find>router</find>
+      <find>decoder</find>
+      <find>Video</find>
+      <find>video</find>
+      <find>Imagen</find>
       <find>keyword</find>
-      <find>Installed</find>
-      <find>album</find>
-      <find>albumAdmin</find>
-      <find>Key</find>
-      <find>focus</find>
-      <find>pyc</find>
-      <find>*.pyc</find>
-      <find>*~</find>
-      <find>felipe</find>
-      <find>verimagen</find>
-      <find>pi</find>
-      <find>alexa</find>
+      <find>decode_speech</find>
+      <find>celery</find>
+      <find>RegularUser</find>
+      <find>REGULARUSER</find>
     </findStrings>
     <replaceStrings>
       <replace>#b2232f</replace>
@@ -1153,6 +314,7 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -1174,13 +336,7 @@
         <option value="$PROJECT_DIR$/PiVoz/backends.py" />
         <option value="$PROJECT_DIR$/Galeria/SimpleMFRC522.py" />
         <option value="$PROJECT_DIR$/Galeria/MFRC522.py" />
-        <option value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/css/google-maps-admin.css" />
-        <option value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/js/google-maps-admin.js" />
-        <option value="$PROJECT_DIR$/PiVoz/celery.py" />
         <option value="$PROJECT_DIR$/PiVoz/__init__.py" />
-        <option value="$PROJECT_DIR$/Galeria/validators.py" />
-        <option value="$PROJECT_DIR$/Galeria/tasks.py" />
-        <option value="$PROJECT_DIR$/Galeria/signals.py" />
         <option value="$PROJECT_DIR$/Galeria/forms.py" />
         <option value="$PROJECT_DIR$/static/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/static/js/pivoz.js" />
@@ -1189,26 +345,32 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/Galeria/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/PiVoz/views.py" />
         <option value="$PROJECT_DIR$/PiVoz/urls.py" />
         <option value="$PROJECT_DIR$/templates/albums.html" />
         <option value="$PROJECT_DIR$/templates/videoGallery.html" />
-        <option value="$PROJECT_DIR$/Galeria/models.py" />
-        <option value="$PROJECT_DIR$/Galeria/admin.py" />
         <option value="$PROJECT_DIR$/templates/fotos.html" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/PiVoz/local_setting.py" />
+        <option value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/css/google-maps-admin.css" />
+        <option value="$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/js/google-maps-admin.js" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/runtime.txt" />
-        <option value="$PROJECT_DIR$/PiVoz/local_setting.py" />
-        <option value="$PROJECT_DIR$/PiVoz/settings.py" />
         <option value="$PROJECT_DIR$/PiVoz/wsgi.py" />
         <option value="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" />
+        <option value="$PROJECT_DIR$/PiVoz/views.py" />
+        <option value="$PROJECT_DIR$/PiVoz/celery.py" />
+        <option value="$PROJECT_DIR$/Galeria/validators.py" />
         <option value="$PROJECT_DIR$/Speech/model/es.dict" />
         <option value="$PROJECT_DIR$/Galeria/SpeechDetector.py" />
         <option value="$PROJECT_DIR$/Speech/model/grammar.jsgf" />
         <option value="$PROJECT_DIR$/Galeria/views.py" />
+        <option value="$PROJECT_DIR$/PiVoz/settings.py" />
+        <option value="$PROJECT_DIR$/Galeria/signals.py" />
+        <option value="$PROJECT_DIR$/Galeria/models.py" />
+        <option value="$PROJECT_DIR$/Galeria/admin.py" />
+        <option value="$PROJECT_DIR$/Galeria/tasks.py" />
       </list>
     </option>
   </component>
@@ -1230,8 +392,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="2560" />
-    <option name="height" value="1080" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1254,7 +417,7 @@
             <path>
               <item name="PiVoz" type="b2602c69:ProjectViewProjectNode" />
               <item name="PiVoz" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
+              <item name="PiVoz" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PiVoz" type="b2602c69:ProjectViewProjectNode" />
@@ -1266,6 +429,10 @@
               <item name="PiVoz" type="462c0819:PsiDirectoryNode" />
               <item name="Speech" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PiVoz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -1283,7 +450,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1364,26 +531,26 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="PiVoz.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
+      <option name="launchJavascriptDebuger" value="true" />
+      <option name="port" value="8080" />
+      <option name="host" value="192.168.0.101" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://192.168.0.101:8080" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+      <option name="customRunCommand" value="192.168.0.105:8000" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Django server.PiVoz" />
-      <item itemvalue="Python.admin" />
       <item itemvalue="Django tests.Test: media.thumbs" />
+      <item itemvalue="Python.admin" />
     </list>
     <recent_temporary>
       <list>
@@ -1410,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550334856127</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Deleted wav files. Added procfile for Heroku Deployment. Fixed video lightbox">
+      <created>1550370410436</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550370410436</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1431,22 +605,23 @@
     <frame x="0" y="0" width="2560" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.09888801" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.07069103" />
       <window_info id="Structure" order="1" sideWeight="0.5014006" side_tool="true" weight="0.22374798" />
       <window_info id="Favorites" order="2" sideWeight="0.50091076" side_tool="true" weight="0.14378029" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32739726" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49648437" visible="true" weight="0.089537226" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.73344105" visible="true" weight="0.26458752" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39839035" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.23742455" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49757674" weight="0.21830986" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5024233" side_tool="true" weight="0.30392158" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.6502423" weight="0.416499" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26655897" side_tool="true" weight="0.33193278" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3360161" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.33299798" />
+      <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" x="0" y="0" width="590" height="880" id="Documentation" order="0" side_tool="true" weight="0.3296875" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -1456,22 +631,23 @@
       <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.32956383" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.1429706" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.13899921" />
       <window_info id="Structure" order="1" sideWeight="0.5014006" side_tool="true" weight="0.22374798" />
       <window_info id="Favorites" order="2" sideWeight="0.50091076" side_tool="true" weight="0.14378029" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32739726" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49648437" visible="true" weight="0.21227364" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.23742455" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.23239437" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5035156" side_tool="true" weight="0.2507003" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.33613446" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32739726" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.73344105" visible="true" weight="0.36921528" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3993964" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.23742455" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.6502423" weight="0.41851106" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.26655897" side_tool="true" weight="0.33193278" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.334004" />
       <window_info anchor="right" x="0" y="0" width="590" height="880" id="Documentation" order="0" side_tool="true" weight="0.3296875" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -1490,181 +666,17 @@
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/MFRC522-python" />
+      <path value="$PROJECT_DIR$/Galeria/MFRC522-python" />
     </ignored-roots>
     <MESSAGE value="Update Mapping Directory." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Mapping Directory." />
+    <MESSAGE value="Deleted wav files. Added procfile for Heroku Deployment. Fixed video lightbox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted wav files. Added procfile for Heroku Deployment. Fixed video lightbox" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PiVoz/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/celery/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4186">
-          <caret line="190" selection-start-line="190" selection-end-line="190" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/validators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/encoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/celery/app/task.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8050">
-          <caret line="374" selection-start-line="374" selection-end-line="374" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/signals.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/tasks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/pocketsphinx/pocketsphinx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7682">
-          <caret line="334" selection-start-line="334" selection-end-line="334" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/admin/options.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="1876" column="4" selection-start-line="1876" selection-start-column="4" selection-end-line="1876" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/js/google-maps-admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="59" column="49" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2967">
-          <caret line="139" column="104" selection-start-line="139" selection-start-column="60" selection-end-line="139" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/widgets.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/pivoz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/DjangoRecorder.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/recorder/dist/recorder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/EleganLoginPage.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/auth/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="69" column="61" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/migrations/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/Galeria/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PiVoz/celery.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/albums.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1127">
           <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PiVoz/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2047">
-          <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1679,25 +691,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8786">
           <caret line="382" column="9" selection-start-line="382" selection-start-column="9" selection-end-line="382" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3335">
-          <caret line="163" column="84" selection-start-line="163" selection-start-column="84" selection-end-line="163" selection-end-column="84" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1550190735450" expanded="true" signature="2551:2554" ph="..." />
-            <marker date="1550190735450" expanded="true" signature="2992:2994" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6302">
-          <caret line="295" column="45" selection-start-line="295" selection-start-column="45" selection-end-line="295" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1725,10 +718,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
+    <entry file="file://$PROJECT_DIR$/Speech/model/cmudict-en-us.dict">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="131">
+          <caret line="2604" column="6" selection-start-line="2604" selection-start-column="6" selection-end-line="2604" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/js/google-maps-admin.js" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django_google_maps/static/django_google_maps/css/google-maps-admin.css" />
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/bin/django-admin">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/MFRC522-python/MFRC522.py" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/MFRC522-python/SimpleMFRC522.py" />
+    <entry file="file:///usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1429" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/runtime.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/fotos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/template/defaulttags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/recorder/recorderJS_example.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1739,100 +792,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runtime.txt">
+    <entry file="file://$PROJECT_DIR$/Galeria/MFRC522.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        <state relative-caret-position="-3217" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="139" column="104" selection-start-line="139" selection-start-column="60" selection-end-line="139" selection-end-column="104" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Galeria/filters.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Speech/model/cmudict-en-us.dict">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="2604" column="6" selection-start-line="2604" selection-start-column="6" selection-end-line="2604" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Galeria/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PiVoz/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="12" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#221#230#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="291">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/recorder/recorderJS_example.js">
+    <entry file="file://$PROJECT_DIR$/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10465">
-          <caret line="455" column="50" selection-start-line="455" selection-start-column="50" selection-end-line="455" selection-end-column="50" />
+        <state relative-caret-position="23">
+          <caret line="89" column="61" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/fotos.html">
+    <entry file="file://$PROJECT_DIR$/templates/registration/login_bckU.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/contrib/auth/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiVoz/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+        <state relative-caret-position="154">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Speech/model/es.dict">
+    <entry file="file://$PROJECT_DIR$/PiVoz/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PiVoz/celery.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540845">
-          <caret line="23515" column="16" selection-start-line="23515" selection-start-column="16" selection-end-line="23515" selection-end-column="16" />
+        <state relative-caret-position="268">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django_celery_results/migrations/0003_auto_20181106_1101.py" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/db/migrations/graph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="769">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/django/contrib/admin/options.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="261" column="28" selection-start-line="261" selection-start-column="28" selection-end-line="261" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/SimpleMFRC522.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PiVoz/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        <state relative-caret-position="69">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PiVoz/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+        <state relative-caret-position="690">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding>
             <element signature="e#306#315#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Speech/model/es.dict">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540914">
+          <caret line="23518" column="18" selection-start-line="23518" selection-start-column="18" selection-end-line="23518" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/validators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="27" column="90" selection-start-line="27" selection-start-column="90" selection-end-line="27" selection-end-column="90" />
+          <folding>
+            <element signature="e#17#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/signals.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Speech/model/grammar.jsgf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="368">
+          <caret line="16" column="61" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1101">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1550806525727" expanded="true" signature="2563:2566" ph="..." />
+            <marker date="1550806525727" expanded="true" signature="3004:3006" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Galeria/tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1473">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Galeria/SpeechDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="55" column="30" lean-forward="true" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+        <state relative-caret-position="299">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#47#73#0" expanded="true" />
-            <marker date="1550367774754" expanded="true" signature="1050:1059" ph="..." />
-            <marker date="1550367774754" expanded="true" signature="1439:1486" ph="..." />
+            <marker date="1550676793767" expanded="true" signature="1050:1059" ph="..." />
+            <marker date="1550676793767" expanded="true" signature="1439:1486" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Galeria/views.py">
+    <entry file="file://$PROJECT_DIR$/Galeria/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="195" column="50" lean-forward="true" selection-start-line="195" selection-start-column="50" selection-end-line="195" selection-end-column="50" />
+        <state relative-caret-position="20">
+          <caret line="441" column="46" selection-start-line="441" selection-start-column="46" selection-end-line="441" selection-end-column="46" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1550806525721" expanded="true" signature="5140:5146" ph="..." />
+            <marker date="1550806525721" expanded="true" signature="8246:8252" ph="..." />
           </folding>
         </state>
       </provider>

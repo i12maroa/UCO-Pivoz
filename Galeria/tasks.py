@@ -1,6 +1,7 @@
 from __future__ import unicode_literals, absolute_import
 from celery import shared_task
 from Galeria.SpeechDetector import MODEL_DIR
+#from Galeria.views import decoder
 import Galeria.models
 import io
 import shutil
@@ -47,7 +48,7 @@ def add_keyword_to_dict(keyword):
             replace("ñ", "gn"). \
             replace("güi", "gui"). \
             replace("güe", "gue"). \
-            replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u")
+            replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o").replace("ú", "u").replace("c h", "ch")
         file.write(keyword + " ")
         for c in spell:
             file.write(c + " ")
@@ -73,5 +74,22 @@ def update_grammar(keyword):
         shutil.copy(tmpfile.name, file.name)
         os.remove(os.path.join(MODEL_DIR, 'grammar.jsgf.tmp'))
         # set_grammar("grammar", GRAMMAR)
+    else:
+        raise IOError("No se ha encontrado ningún diccionario. Póngase en contacto con el administrador.")
+
+@shared_task
+def remove_keyword(keyword):
+    keyword = keyword.lower()
+    file = io.open(os.path.join(MODEL_DIR, 'grammar.jsgf'), "r", encoding="utf-8")
+    tmpfile = io.open(os.path.join(MODEL_DIR, 'grammar.jsgf.tmp'), "w", encoding="utf-8")
+    if file != FileNotFoundError:
+        for line in file:
+            if line.startswith('<keyTag>'):
+                line = line.replace(" | " + keyword, "")
+            tmpfile.write(line)
+        file.close()
+        tmpfile.close()
+        shutil.copy(tmpfile.name, file.name)
+        os.remove(os.path.join(MODEL_DIR, 'grammar.jsgf.tmp'))
     else:
         raise IOError("No se ha encontrado ningún diccionario. Póngase en contacto con el administrador.")

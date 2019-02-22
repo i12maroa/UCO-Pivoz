@@ -14,6 +14,7 @@ from django.urls import reverse
 from django_google_maps import widgets as map_widgets
 from django_google_maps import fields as map_fields
 from Galeria.tasks import check_dictionary, add_keyword_to_dict, update_grammar
+
 # from django.contrib.admin.models import LogEntry, ADDITION, CHANGE
 # from django.contrib.contenttypes.models import ContentType
 # from django.db.models.signals import pre_save
@@ -79,6 +80,10 @@ class AdminUserAdmin(BaseUserAdmin):
             return qs
         return qs.filter(id=request.user.id)
 
+    def get_field_queryset(self, db, db_field, request):
+        if db_field.name == "usuarios":
+            return RegularUser.objects.filter(adminuser=request.user)
+
 
 class UserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
@@ -114,6 +119,8 @@ class UserAdmin(BaseUserAdmin):
             return qs
         return qs.filter(user=request.user)
         # return qs.filter(adminuser=request.user)
+
+
 
 
 class ImagenInstanceInline(CompactInline):
@@ -234,25 +241,27 @@ class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
     def save_related(self, request, form, formsets, change):
         obj = form.instance
         request.user.adminuser.usuarios.add(obj)
-        obj.save()
+        form.save_m2m()
         super().save_related(request, form, formsets, change)
 
-    # def save_model(self, request, obj, form, change):
-    #     if obj:
-    #         super().save_model(request, obj, form, change)
-    #         if not request.user.is_superuser:
-    #             request.user.adminuser.usuarios.add(obj)
+    def save_model(self, request, obj, form, change):
+        if obj:
+            super().save_model(request, obj, form, change)
+            if not request.user.is_superuser:
+                request.user.adminuser.usuarios.add(obj)
 
-    def save_formset(self, request, form, formset, change):
-        logger = logging.getLogger(__name__)
-        logger.debug('Guarda')
-        if formset.model == Album:
-            formset.save()
-            formset.save_m2m()
-            for f in formset.forms:
-                if not f.instance.created_by:
-                    f.instance.created_by = request.user.adminuser
-                    f.instance.save()
+    # def save_formset(self, request, form, formset, change):
+    #     logger = logging.getLogger(__name__)
+    #     logger.debug('Guarda')
+    #     if formset.model == Album:
+    #         for f in formset.forms:
+    #             if not f.instance.created_by:
+    #                 f.instance.created_by = request.user.adminuser
+    #                 f.instance.save()
+    #         formset.save()
+    #         formset.save_m2m()
+    #     else:
+    #         pass
 
 
 @admin.register(Imagen)
@@ -284,6 +293,11 @@ class ImagenAdmin(admin.ModelAdmin):
             return qs
         return qs.filter(album__created_by=request.user)
 
+    def get_field_queryset(self, db, db_field, request):
+        if db_field.name == 'album':
+            return Album.objects.filter(created_by=request.user)
+
+
 
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
@@ -301,7 +315,7 @@ class AlbumAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         if not change:
-            obj.created_by = request.user
+            obj.created_by = request.user.adminuser
             obj.slug = slugify(obj.titulo)
         super().save_model(request, obj, form, change)
 

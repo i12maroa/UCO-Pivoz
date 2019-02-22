@@ -29,10 +29,20 @@ class SpeechDetector:
         except:
             raise ValueError("Error en set_search: No se ha podido establecer el método %s." % search_method)
 
+    def set_keyword_spotted(self, keyphrase="ordenador"):
+        self.decoder.set_keyphrase("keyword", keyphrase)
+        # try:
+
+        # except:
+        #     raise ValueError("Error en set_keyword_spotted: No se ha podido establecer la palabra clave %s." % keyphrase)
+
 
     def set_grammar(self, grammar_name, path_to_file):
         if os.path.isfile(path_to_file):
             self.decoder.set_jsgf_file(grammar_name, path_to_file)  # Default will be GRAMMAR path
+
+    def get_search_method(self):
+        return self.decoder.get_search()
 
     def decode_phrase(self, wav_file):
         self.decoder.start_utt()

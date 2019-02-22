@@ -6,7 +6,7 @@ from imagekit.processors import ResizeToFill
 from django.utils.safestring import mark_safe
 import os
 from django.utils.text import slugify
-from .validators import validate_file_extension, validate_keyword
+from .validators import validate_file_extension, validate_keyword, alphabetic
 from Galeria.tasks import check_dictionary, add_keyword_to_dict, update_grammar
 from django.core.validators import RegexValidator
 from django_google_maps import fields as map_fields
@@ -129,23 +129,11 @@ class AdminUser(MyUser):
 
 class Keyword(models.Model):
     id_keyword = models.AutoField(primary_key=True)
-    keyword = models.CharField(max_length=20, unique=True, validators=[validate_keyword])
+    keyword = models.CharField(max_length=20, unique=True, validators=[validate_keyword, alphabetic])
     usuario = models.ForeignKey(AdminUser, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return self.keyword
-
-    def save(self, *args, **kwargs):
-        self.keyword = self.keyword.lower()
-        is_registered = check_dictionary.delay(self.keyword)
-        if is_registered:
-            print("La palabra " + self.keyword + " está registrada en el diccionario.")
-            update_grammar.delay(self.keyword)
-            super(Keyword, self).save(*args, **kwargs)
-        else:
-            add_keyword_to_dict.delay(self.keyword)
-            update_grammar.delay(self.keyword)
-            super(Keyword, self).save(*args, **kwargs)
 
 
 class Album(models.Model):
@@ -195,11 +183,7 @@ class Multimedia(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     keyword = models.ManyToManyField('Keyword', help_text="Selecciona las palabras clave para etiquetar.")
-    slug = models.SlugField(max_length=50, unique=True)
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.titulo)
-        super(Multimedia, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.titulo

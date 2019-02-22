@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,9 +27,9 @@ SECRET_KEY = '@+z$b_^*hq5*8nl2*c#0$433!3=w^%2s2(#fiaja7!c9aii&)o'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '111.222.333.444', 'mywebsite.com']
+#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '111.222.333.444', 'mywebsite.com', '192.168.0.105']
 
-
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'jet.dashboard',
     'django_filters',                           # https://github.com/carltongibson/django-filter
     'django_admin_row_actions',                 # https://github.com/DjangoAdminHackers/django-admin-row-actions
+    'django_celery_results',
     'django_extensions',
     'sendgrid',                                 # https://github.com/sendgrid
     'django_registration',
@@ -50,16 +52,19 @@ INSTALLED_APPS = [
     'phonenumber_field',                        # https://github.com/stefanfoulis/django-phonenumber-field
     'imagekit',                                 # https://github.com/matthewwithanm/django-imagekit
     'Galeria',
+    #'storages',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'PiVoz.urls'
@@ -94,6 +99,35 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'PiVoz',
+#         'USER': 'name',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
+
+# # AWS S3 Config
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+#     'CacheControl': 'max-age=94608000',
+# }
+#
+# AWS_STORAGE_BUCKET_NAME = 'pivoz'
+# AWS_S3_REGION_NAME = 'eu-west-1'  # e.g. us-east-2
+# AWS_ACCESS_KEY_ID = 'AKIAIPKETOZWAMSE5UUQ'
+# AWS_SECRET_ACCESS_KEY = 'fS8TFbNWUfxaazEBXEv7MBLIL08DuJi/8smLsGJ2'
+#
+# # Tell django-storages the domain to use to refer to static files.
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#
+# # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
+# # you run `collectstatic`).
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -144,10 +178,15 @@ REGISTRATION_OPEN = True
 GOOGLE_MAPS_API_KEY = 'AIzaSyAurb5ZABXUxF0QGpr2cyTEf_DJVKTD3k4'
 
 # Celery Config
-CELERY_TASK_SERIALIZER = 'json'
-#CELERY_RESULT_BACKEND = 'django-db'
+#CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'django-db'
 #CELERY_BROKER_URL = 'django://'
 #INSTALLED_APPS += ('kombu.transport.django', )
+
+# Heroku Config
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -166,21 +205,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
 AUTH_USER_MODEL = 'Galeria.MyUser'
 
 LOGIN_REDIRECT_URL = 'home'
-
-
-LOGIN_URL = "http://127.0.0.1:8000/accounts/login/"
+LOGIN_URL = 'login'
 
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

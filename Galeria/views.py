@@ -56,7 +56,7 @@ def image_serializer(image, speech):
             'src': image.fichero_imagen.url, 'thumbnail': image.thumbnail.url,
             'keywords': keylist}
 
-#@shared_task
+@shared_task
 def decode_speech(audio_file):
     decoder.decode_phrase(audio_file)
 
@@ -67,8 +67,31 @@ def decode_speech(audio_file):
 
     return phrase_recognized
 
+# def decode_speech(audio_file):
+#     decoder.decode_phrase(audio_file)
+#
+#     # If the keyword "ordenador" is spotted, then switch to jsgf mode
+#     # Speech Example: Ordenador show me photos of Sara
+#     if decoder.get_hyp() == "ordenador":
+#         print ("BINGOOOO")
+#         print(decoder.get_search_method())
+#         decoder.set_search("grammar")
+#         # Grammar search for " show me photos of Sara" which is defined in jsgf file, so phrase_recognized get that value.
+#         phrase_recognized = decoder.get_hyp()
+#         print (phrase_recognized)
+#     else:
+#         # If no keyword spotted, switch to kws mode
+#         decoder.set_search("keyword")
+#         phrase_recognized = ""
+#     # if decoder.get_hyp() == "":
+#     #     phrase_recognized = ""
+#     # else:
+#     #     phrase_recognized = decoder.get_hyp()
+#     return phrase_recognized
+
 
 def process_speech(request, recognized_audio):
+    keylist = []
     url = ''  # Is the URL where the user will be redirected once speech has been procesed
     if recognized_audio.find("todas") != -1:
         imagenes_filtered = Galeria.models.Imagen.objects.all().filter(album__usuario=request.user)
@@ -84,7 +107,7 @@ def process_speech(request, recognized_audio):
             or recognized_audio.find('mostrar imágenes') != -1 \
             or recognized_audio.find('ver fotografías') != -1 \
             or recognized_audio.find('mostrar fotografías') != -1:
-        keylist = []
+
         # for word in recognized_audio.split(" "):
         #     if word in Galeria.models.Keyword.objects.all():
         #         keylist.append(word)
@@ -102,6 +125,10 @@ def process_speech(request, recognized_audio):
         return {'type': 0, 'objects': imagenes_filtered}
     if recognized_audio.find('ver videos') != -1\
             or recognized_audio.find('mostrar videos') != -1:
+        for key in Galeria.models.Keyword.objects.all():
+            if recognized_audio.find(key.keyword.lower()) != -1:
+                keylist.append(key)
+        print('Identificado Keyword: ', keylist)
         print("Reconocido VIDEO")
         videos_filtered = Galeria.models.Video.objects.filter(keyword__keyword__in=keylist,
                                                               album__usuario=request.user).distinct()
@@ -122,10 +149,10 @@ def process_speech(request, recognized_audio):
             or recognized_audio.find('cerrar') != -1):
         print("Reconocido SALIR")
         return "salir"
-    if recognized_audio.find('subirvolumen') != -1:
+    if recognized_audio.find('subir volumen') != -1:
         print("Reconocido VolumeUP")
         return "volumeUp"
-    if recognized_audio.find('bajarvolumen') != -1:
+    if recognized_audio.find('bajar volumen') != -1:
         print("Reconocido VolumeDown")
         return "volumeDown"
     if recognized_audio.find('pausa') != -1 \
@@ -136,13 +163,13 @@ def process_speech(request, recognized_audio):
             or recognized_audio.find('continuar') != -1:
         print("Reconocido play")
         return "play"
-    if recognized_audio.find('menuprincipal') != -1 \
+    if recognized_audio.find('menu principal') != -1 \
             or recognized_audio.find('menu') != -1:
         print("Reconocido Menú Principal")
         return "menu"
-    if recognized_audio.find('fotos') != -1 \
-            or recognized_audio.find('fotografías') != -1 \
-            or recognized_audio.find('imágenes') != -1:
+    if recognized_audio == 'fotos'\
+            or recognized_audio == 'fotografías'\
+            or recognized_audio == 'imágenes':
         print("Reconocido Menú-Fotos")
         return "menu-fotos"
     if recognized_audio.find('videos') != -1:
@@ -168,7 +195,8 @@ def upload(request):
             print("Audio name: ", record_audio.name)
             fs = FileSystemStorage()
             filename = fs.save(record_audio.name + ".wav", record_audio)
-            speech = decode_speech(filename)
+            speech = decode_speech.delay(filename)
+            speech = speech.get(timeout=1)
             # run = decode_speech.delay(filename)
             # speech = decode_speech.AsyncResult(run.id)
             # speech = speech.get()
@@ -230,7 +258,7 @@ def imageGallery(request):
 
 @login_required()
 def videoGallery(request):
-    videos = Video.objects.all()
+    videos = Video.objects.all().filter(album__usuario=request.user)
     return render_to_response('videoGallery.html', locals(), RequestContext(request))
 
 
