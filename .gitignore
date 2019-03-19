@@ -106,3 +106,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Media and assets folders
+media/
+assets/
+
+# Migrations
+Galeria/migrations
