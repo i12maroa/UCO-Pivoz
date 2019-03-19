@@ -6,6 +6,7 @@ from django.contrib.admin import AdminSite
 from django.contrib.contenttypes.admin import GenericTabularInline
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.safestring import mark_safe
+from django.utils.html import format_html
 from Galeria.models import RegularUser, AdminUser
 from django.utils.text import slugify
 from jet.admin import CompactInline
@@ -38,7 +39,7 @@ class AdminUserAdmin(BaseUserAdmin):
     # The fields to be used in displaying the Admin model.
     # These overrides the definitions on the base AdminUserAdmin
     # that reference specific fields on auth.User
-    list_display = ('avatarPreview', 'username', 'email',)
+    list_display = ('avatarPreview', 'username', 'email', 'user_actions')
     list_filter = ('last_login',)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
@@ -56,7 +57,7 @@ class AdminUserAdmin(BaseUserAdmin):
     search_fields = ('username',)
     ordering = ('username',)
     filter_horizontal = ('usuarios',)
-    readonly_fields = ['avatarPreview', ]
+    readonly_fields = ['avatarPreview', 'user_actions', ]
 
     def avatar(self, obj):
         return mark_safe('<img style="border-radius:80px;" src="{url}" width="{width}" heigth={heigth} />'.format(
@@ -73,6 +74,7 @@ class AdminUserAdmin(BaseUserAdmin):
             heigth=100,
         )
         )
+    avatarPreview.short_description = "Imagen de Perfil"
 
     def get_queryset(self, request):
         qs = super(AdminUserAdmin, self).get_queryset(request)
@@ -83,6 +85,15 @@ class AdminUserAdmin(BaseUserAdmin):
     def get_field_queryset(self, db, db_field, request):
         if db_field.name == "usuarios":
             return RegularUser.objects.filter(adminuser=request.user)
+
+    def user_actions(self, obj):
+        return format_html(
+            '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar mi perfil</a>',
+            reverse('admin:Galeria_adminuser_change', args=[obj.pk])
+            ,)
+    user_actions.short_description = "Mi perfil"
+    user_actions.allow_tags = True
+
 
 
 class UserAdmin(BaseUserAdmin):
@@ -186,7 +197,7 @@ class AlbumM2MInline(CompactInline):
 class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
     add_form = RegularUserCreationForm
     form = UserChangeForm
-    list_display = ('avatarPreview', 'username', 'email')
+    list_display = ('avatarPreview', 'username', 'email', 'rfid_vinculado', 'user_actions')
     list_filter = ('username',)
     fieldsets = (
         (None, {'fields': ('Avatar', 'username', 'email', 'password', 'rfid')}),
@@ -202,17 +213,21 @@ class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
     inlines = [AlbumM2MInline]
     search_fields = ('username'),
     ordering = ('username',)
-    readonly_fields = ['avatarPreview', 'Avatar', 'rfid']
+    readonly_fields = ['avatarPreview', 'Avatar', 'rfid','user_actions']
 
-    def get_row_actions(self, obj):
-        row_actions = [
-            {
-                'label': 'Vincular Pulsera',
-                'url': reverse('ReadRFID', args=[obj.id])
-            },
-        ]
-        row_actions += super(RegularUserAdmin, self).get_row_actions(obj)
-        return row_actions
+    # def get_row_actions(self, obj):
+    #     row_actions = [
+    #         {
+    #             'label': 'Vincular Pulsera',
+    #             'url': reverse('ReadRFID', args=[obj.id])
+    #         },
+    #         {
+    #             'label': 'Desvincular Pulsera',
+    #             'url': reverse('deleteRFID', args=[obj.id])
+    #         },
+    #     ]
+    #     row_actions += super(RegularUserAdmin, self).get_row_actions(obj)
+    #     return row_actions
 
     def avatarPreview(self, obj):
         return mark_safe('<img style="border-radius:120px;" src="{url}" width="{width}" heigth={heigth} />'.format(
@@ -250,6 +265,24 @@ class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
             if not request.user.is_superuser:
                 request.user.adminuser.usuarios.add(obj)
 
+    def rfid_vinculado(self, obj):
+        if obj.rfid != "":
+            return True
+        else:
+            return False
+    rfid_vinculado.boolean = True
+
+    def user_actions(self, obj):
+        return format_html(
+            '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar Usuario</a>&nbsp;'
+            '<a class="button" href="{}" style="color:#fff; background-color:#3da311;">Vincular pulsera</a>&nbsp;'
+            '<a class="button" href="{}" style="color:#fff; background-color:#0e66cc;">Desvincular pulsera</a>',
+            reverse('admin:Galeria_regularuser_change', args=[obj.pk]),
+            reverse('ReadRFID', args=[obj.pk]),
+            reverse('deleteRFID', args=[obj.pk]),)
+    user_actions.short_description = "Acciones de Usuario Regular"
+    user_actions.allow_tags = True
+
     # def save_formset(self, request, form, formset, change):
     #     logger = logging.getLogger(__name__)
     #     logger.debug('Guarda')
@@ -266,10 +299,18 @@ class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
 
 @admin.register(Imagen)
 class ImagenAdmin(admin.ModelAdmin):
-    list_display = ('preview', 'titulo')
-    exclude = ('path',)
-    # fields = ('image_tag',)
-    readonly_fields = ('vista_previa',)
+    list_display = ('preview', 'titulo', 'image_actions')
+    #exclude = ('path', 'image_actions',)
+    readonly_fields = ('vista_previa', 'image_actions')
+    fieldsets = (
+        ('General', {
+            'fields': ('fichero_imagen', 'titulo', 'keyword', 'descripcion', 'album', 'vista_previa'),
+        }),
+        ('Opciones Avanzadas', {
+            'classes': ('collapse',),
+            'fields': ('image_width', 'image_height'),
+        }),
+    )
 
     def vista_previa(self, obj):
         return mark_safe('<img style= border-radius:25px;"  src="{url}" width="{width}" height={height} />'.format(
@@ -286,6 +327,7 @@ class ImagenAdmin(admin.ModelAdmin):
             height=100,
         )
         )
+    preview.short_description = "Vista Previa"
 
     def get_queryset(self, request):
         qs = super(ImagenAdmin, self).get_queryset(request)
@@ -297,6 +339,18 @@ class ImagenAdmin(admin.ModelAdmin):
         if db_field.name == 'album':
             return Album.objects.filter(created_by=request.user)
 
+    def image_actions(self, obj):
+        return format_html(
+            '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar Imagen</a>&nbsp;'
+            '<a class="button " href="{}" style="color:#fff; background-color:#c14747;">Eliminar Imagen </a>',
+            reverse('admin:Galeria_imagen_change', args=[obj.pk]),
+            reverse('admin:Galeria_imagen_delete', args=[obj.pk])
+            ,)
+    image_actions.short_description = "Administrar Imagen"
+    image_actions.allow_tags = True
+
+
+
 
 
 @admin.register(Album)
@@ -307,10 +361,10 @@ class AlbumAdmin(admin.ModelAdmin):
         map_fields.AddressField: {'widget': map_widgets.GoogleMapsAddressWidget(attrs={'data-map-type': 'roadmap'})},
     }
     # prepopulated_fields = {'slug': ('titulo',)}
-    readonly_fields = ['slug', 'created_by' ]
+    readonly_fields = ['slug', 'created_by', 'album_actions']
     date_hierarchy = 'fecha_creacion'
     list_filter = ('fecha_creacion', 'usuario')
-    list_display = ('Portada', 'titulo')
+    list_display = ('Portada', 'titulo', 'get_n_elements', 'album_actions')
     inlines = [ImagenInstanceInline, VideoInstanceInline]
 
     def save_model(self, request, obj, form, change):
@@ -341,6 +395,7 @@ class AlbumAdmin(admin.ModelAdmin):
             height=75,
         )
         )
+    Portada.short_description = "Portada"
 
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         if db_field.name == "usuario":
@@ -348,6 +403,16 @@ class AlbumAdmin(admin.ModelAdmin):
         if db_field.name == "album":
             kwargs["queryset"] = Album.objects.filter(created_by=request.user)
         return super().formfield_for_manytomany(db_field, request, **kwargs)
+
+    def album_actions(self, obj):
+        return format_html(
+            '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar Álbum</a>&nbsp;'
+            '<a class="button " href="{}" style="color:#fff; background-color:#c14747;">Eliminar Álbum </a>',
+            reverse('admin:Galeria_album_change', args=[obj.pk]),
+            reverse('admin:Galeria_album_delete', args=[obj.pk])
+            ,)
+    album_actions.short_description = "Administrar Álbum"
+    album_actions.allow_tags = True
 
     # def save_formset(self, request, form, formset, change):
     #     if formset.model == RegularUser:
@@ -462,7 +527,7 @@ class KeywordAdmin(admin.ModelAdmin):
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ('titulo',)
+    list_display = ('titulo', 'video_actions')
     exclude = ('path',)
 
     def get_queryset(self, request):
@@ -470,6 +535,16 @@ class VideoAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return qs
         return qs.filter(album__created_by=request.user)
+
+    def video_actions(self, obj):
+        return format_html(
+            '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar Video</a>&nbsp;'
+            '<a class="button " href="{}" style="color:#fff; background-color:#c14747;">Eliminar Video </a>',
+            reverse('admin:Galeria_album_change', args=[obj.pk]),
+            reverse('admin:Galeria_album_delete', args=[obj.pk])
+            ,)
+    video_actions.short_description = "Administrar Video"
+    video_actions.allow_tags = True
 
 
 @admin.register(Musica)

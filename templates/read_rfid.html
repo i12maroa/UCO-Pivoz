@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <script src="{% static "/js/jquery-2.1.0.min.js" %}"></script>
+    <script src="{% static "/js/bootstrap.js" %}"></script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+    <meta charset="UTF-8">
+    <title>Read Rfid</title>
+</head>
+<body>
+
+
+
+    <p id="rfid"> <p>
+    <p id="usuario" style="visibility: visible">{{ user }}</p>
+    <p id="cliente" style="visibility: visible"> {{ cliente }}</p>
+    <script>
+        $(document).ready(function () {
+            var cliente = document.getElementById("cliente").innerText;
+            console.log("Entra read");
+            localStorage.setItem('Client_ip', cliente);
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    obj = JSON.parse(this.responseText);
+                    console.log(obj.rfid_id)
+
+
+                }
+            };
+            xhr.open('GET', 'http://' + cliente + ':5000' , true);
+            //xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            xhr.onload = function () {
+                document.getElementById('rfid').innerText = obj.rfid_id;
+                let usuario = document.getElementById('usuario').innerText;
+                console.log('usuario:'+usuario);
+                let csrftoken = getCookie('csrftoken');
+                $.post('http://192.168.0.101:8000/galeria/RFID/' + usuario + '/', {
+                    usuario : usuario,
+                    rfid_id : obj.rfid_id,
+                    csrfmiddlewaretoken: csrftoken
+                });
+                window.location.replace('{% url 'admin:Galeria_regularuser_changelist' %}')
+            };
+            xhr.onerror = function (e) {
+                alert("Error en la lectura" + cliente);
+                window.location.replace('{% url 'admin:Galeria_regularuser_changelist' %}')
+            };
+            xhr.send();
+        {#    $(document).ready(function () {#}
+        {#    console.log("Entra read");#}
+        {#    $.get("http://192.168.0.105:5000", function(data){#}
+        {#        alert("Data: " + data.rfid_id);#}
+        {#    });#}
+
+        });
+    </script>
+
+
+</body>
+</html>

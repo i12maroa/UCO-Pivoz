@@ -153,6 +153,7 @@ function makeLink() {
                 else if (obj['comando']){
                     switch (obj['comando']) {
                         case "ver":
+                            if (window.location.pathname == urlIndex){showError("Pruebe a escoger una opción del menú princial: Imágenes, Vídeos, Albums o Radios");break;}
                             console.log("El usuario quiere ver las imagenes");
                             if (!$('#lightbox-modal').is(":visible")){
                                 verImagen();
@@ -162,12 +163,14 @@ function makeLink() {
                             break;
 
                         case "siguiente":
+                            if (window.location.pathname == urlIndex){showError("Pruebe a escoger una opción del menú princial: Imágenes, Vídeos, Albums o Radios");break;}
                             console.log("Siguiente Imagen");
                             siguienteImagen();
                             showInfo("Comando: Siguiente");
                             break;
 
                         case "anterior":
+                            if (window.location.pathname == urlIndex){showError("Pruebe a escoger una opción del menú princial: Imágenes, Vídeos, Albums o Radios");break;}
                             console.log("Imagen anterior");
                             showInfo("Comando: Anterior");
                             anteriorImagen();

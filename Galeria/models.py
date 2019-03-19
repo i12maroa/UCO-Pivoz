@@ -1,8 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
 from phonenumber_field.modelfields import PhoneNumberField
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+from imagekit.models import ImageSpecField, ProcessedImageField
+from imagekit.processors import ResizeToFill, Adjust
+from imagekit import ImageSpec
 from django.utils.safestring import mark_safe
 import os
 from django.utils.text import slugify
@@ -77,7 +78,11 @@ class MyUser(AbstractUser):
     telefono = PhoneNumberField()
     avatar = models.ImageField(verbose_name='Imagen de perfil',
                                upload_to='img/avatars',
-                               default='img/avatars/avatar-placeholder-generic.png')
+                               default='img/avatars/face-old-man-profile-avatar-of-the-grandfather-vector-187257361.jpg')
+    avatar_thumbnail = ImageSpecField(source='avatar',
+                                      processors=[ResizeToFill(100, 80)],
+                                      format='JPEG',
+                                      options={'quality': 60})
 
     def __str(self):
         return self.username
@@ -135,17 +140,30 @@ class Keyword(models.Model):
     def __str__(self):
         return self.keyword
 
+class ResizeImageSpec(ImageSpec):
+    format = 'JPEG'
+    opciones = {'quality': 100}
+    processors = [Adjust(sharpness=1.1), ]
+
+    @property
+    def options(self):
+        options = self.opciones
+        # You can create some checks here and choose to change the options
+        # you can access the file with self.source
+        print ("Tamaño del fichero: {0}".format(self.source.size))
+        if self.source.size > 2 * 100 * 100:
+            options['quality'] -= 25
+        return options
+
 
 class Album(models.Model):
-    image_height = models.PositiveSmallIntegerField(default=400)
-    image_width = models.PositiveSmallIntegerField(default=400)
     id_album = models.AutoField(primary_key=True)
     titulo = models.CharField(max_length=40, null=False)
     descripcion = models.TextField(verbose_name='Descripción del Álbum', blank=True)
-    thumbnail = models.ImageField(upload_to=get_upload_path, height_field='image_height', width_field='image_width')
+    thumbnail = ProcessedImageField(upload_to=get_upload_path, verbose_name="Portada", spec=ResizeImageSpec)
     address = map_fields.AddressField(max_length=200, verbose_name='Ubicación', blank=True,
                                       help_text="Añade información de la ubicación para localizar "
-                                                "tomas basándote en el sitio donde fueron tomadas. ¿Asombroso verdad?")
+                                                "fotos basándote en el sitio donde fueron tomadas. ¿Asombroso verdad?")
     geolocation = map_fields.GeoLocationField(max_length=100, verbose_name="Geolocaclización", blank=True)
     fecha_creacion = models.DateTimeField(verbose_name='Fecha de creación', auto_now_add=True)
     fecha_modificacion = models.DateTimeField(verbose_name='Última edición', auto_now=True)
@@ -174,6 +192,12 @@ class Album(models.Model):
     thumbnail_tag.short_description = 'Portada'
     thumbnail_tag.allow_tags = True
 
+    def get_n_elements(self):
+        return self.multimedia_set.count()
+
+    get_n_elements.short_description = "Nº de elementos"
+    get_n_elements.allow_tags = True
+
 
 class Multimedia(models.Model):
     id_multimedia = models.AutoField(primary_key=True)
@@ -182,7 +206,7 @@ class Multimedia(models.Model):
     path = models.FilePathField(path='media', allow_folders=True)
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    keyword = models.ManyToManyField('Keyword', help_text="Selecciona las palabras clave para etiquetar.")
+    keyword = models.ManyToManyField('Keyword', verbose_name= "Palabras clave",help_text="Selecciona las palabras clave para etiquetar.")
 
 
     def __str__(self):
@@ -194,15 +218,12 @@ class Multimedia(models.Model):
     def get_album_title(self):
         return self.album.titulo
 
-
 class Imagen(Multimedia):
-    # titulo = models.CharField(max_length=100)
-    image_width = models.PositiveSmallIntegerField(default=640)
-    image_height = models.PositiveSmallIntegerField(default=480)
-    fichero_imagen = models.ImageField(verbose_name='Archivo de imagen',
-                                       upload_to=get_upload_path,
-                                       width_field='image_width',
-                                       height_field='image_height')
+    image_width = models.PositiveSmallIntegerField(default=640, verbose_name='Anchura de la imagen')
+    image_height = models.PositiveSmallIntegerField(default=480, verbose_name=' Altura de la imagen')
+    fichero_imagen = ProcessedImageField(verbose_name='Archivo de imagen',
+                                         upload_to=get_upload_path,
+                                         spec=ResizeImageSpec)
     thumbnail = ImageSpecField(source='fichero_imagen',
                                processors=[ResizeToFill(600, 300)],
                                format='JPEG',

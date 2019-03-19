@@ -15,9 +15,10 @@ Including another URLconf
 """
 
 from django.urls import path, re_path
-from .views import imageGallery, videoGallery, musicGallery, radio, playlist, record_web_audio, upload, AlbumDetail,\
-    albumGallery, read_rfid
+from .views import imageGallery, videoGallery, musicGallery, radio, playlist, record_web_audio, upload, AlbumDetail, \
+    albumGallery, read_rfid, delete_rfid
 
+#app_name = 'galeria'
 urlpatterns = [
     path('images/', imageGallery, name="imageGallery"),
     path('videos/', videoGallery, name="videoGallery"),
@@ -29,5 +30,7 @@ urlpatterns = [
     path('uploadAudio/', upload, name="uploadAudio"),
     path('albumImage/<slug:slug>/', AlbumDetail, name="albumsGalleryDetailView"),
     re_path(r'^RFID/(?P<user>\d+)/$', read_rfid, name="ReadRFID"),
+    re_path(r'^deleteRFID/(?P<user>\d+)/$', delete_rfid, name="deleteRFID"),
+
 
 ]

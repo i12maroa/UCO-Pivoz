@@ -4,11 +4,11 @@
 from pocketsphinx import *
 import os
 from celery import shared_task
+from PiVoz.settings import BASE_DIR
 
 
-
-MODEL_DIR = "/Users/tony/PiVoz/Speech/model"
-GRAMMAR = "/Users/tony/PiVoz/Speech/model/grammar.jsgf"
+MODEL_DIR = os.path.join(BASE_DIR, 'Speech/model')
+GRAMMAR = os.path.join(BASE_DIR, 'Speech/model/grammar.jsgf')
 
 
 # A decoder class to initialite decoder with the properly configuration and decode Speech

@@ -3,6 +3,7 @@ from .models import *
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib import messages
 from django.template import RequestContext
 from django.http.response import HttpResponseRedirect, HttpResponse
 from django.core.files.storage import FileSystemStorage
@@ -56,7 +57,7 @@ def image_serializer(image, speech):
             'src': image.fichero_imagen.url, 'thumbnail': image.thumbnail.url,
             'keywords': keylist}
 
-@shared_task
+# TODO: Add decode_speech to celery queue
 def decode_speech(audio_file):
     decoder.decode_phrase(audio_file)
 
@@ -169,7 +170,7 @@ def process_speech(request, recognized_audio):
         return "menu"
     if recognized_audio == 'fotos'\
             or recognized_audio == 'fotografías'\
-            or recognized_audio == 'imágenes':
+            or recognized_audio == 'pivoz imágenes':
         print("Reconocido Menú-Fotos")
         return "menu-fotos"
     if recognized_audio.find('videos') != -1:
@@ -195,15 +196,14 @@ def upload(request):
             print("Audio name: ", record_audio.name)
             fs = FileSystemStorage()
             filename = fs.save(record_audio.name + ".wav", record_audio)
-            speech = decode_speech.delay(filename)
-            speech = speech.get(timeout=1)
+            speech = decode_speech(filename)
+            #speech = speech.get(timeout=1)
             # run = decode_speech.delay(filename)
             # speech = decode_speech.AsyncResult(run.id)
             # speech = speech.get()
             # Eliminamos el audio que ya ha sido procesado
-            if speech:
-                audio = record_audio.name + '.wav'
-                fs.delete(audio)
+            audio = record_audio.name + '.wav'
+            fs.delete(audio)
             if speech == "":
                 return JsonResponse({'error': 'No se ha reconocido nada. Pruebe a decir: ver todas las fotos'})
             else:
@@ -319,14 +319,37 @@ def AlbumDetail(request, slug):
     print(slug)
     return render_to_response('fotos.html', locals(), RequestContext(request))
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
 
 @staff_member_required
 def read_rfid(request, user):
-    # reader = SimpleMFRC522()
-    # try:
-    #     rfid_id, rfid_txt = reader.read()
-    #     print(rfid, user)
-    #     RegularUser.objects.filter(pk=user).update(rfid=rfid_id)
-    # finally:
-    #     GPIO.cleanup()
-    return HttpResponseRedirect(reverse('admin:index'))
+        if request.method == 'POST':
+            usuario = request.POST.get("usuario")
+            rfid_id = request.POST.get("rfid_id")
+            print(rfid_id)
+            print("Usuario: {0} con rfid {1} sera actualizado".format(usuario, rfid_id))
+            for user in RegularUser.objects.all():
+                if user.rfid == rfid_id:
+                    messages.error(request, 'El código rfid {0} ya está asociado a un usuario.'.format(rfid_id))
+                    return HttpResponseRedirect(reverse('admin:galeria_imagen_changelist'))
+            if usuario is not None and rfid_id != "":
+                RegularUser.objects.filter(pk=usuario).update(rfid=rfid_id)
+                messages.success(request, 'El código RFID {0} se ha asociado al usuario {1} con éxito'.format(rfid_id, usuario.username))
+                return HttpResponseRedirect(reverse('admin:index'))
+        else:
+            client_ip = get_client_ip(request)
+            print (client_ip)
+            return render_to_response('read_rfid.html', {'user': user, 'cliente': client_ip})
+
+def delete_rfid(request, user):
+    usuario = RegularUser.objects.get(pk=user)
+    RegularUser.objects.filter(pk=user).update(rfid="")
+    messages.success(request, 'Usuario {0} modificado con éxito'.format(usuario.username))
+    return HttpResponseRedirect(reverse('admin:Galeria_regularuser_change', args=(user,)))

@@ -1,7 +1,8 @@
-from django.shortcuts import render_to_response, redirect, HttpResponseRedirect, reverse
+from django.shortcuts import render_to_response, redirect, HttpResponseRedirect, reverse, render
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 from Galeria.SimpleMFRC522 import SimpleMFRC522
 from django.views.decorators.csrf import csrf_protect
 
@@ -15,8 +16,28 @@ def index(request):
 def profile(request):
     return render_to_response("profile.html", locals(), RequestContext(request))
 
-
 def rfid_login(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('home'))
+    if request.method=='POST':
+        rfid = request.POST.get('rfid_id')
+        if rfid == "":
+            messages.error(request, "Error en la lectura. Por favor, acerque la pulsera al lector")
+            return HttpResponseRedirect(reverse('RFIDlogin'))
+        user = authenticate(request, rfid=rfid)
+        if user is not None:
+            login(request, user)
+            print("Logueado")
+            return HttpResponseRedirect(reverse('home'))
+        else:
+            messages.error(request, "No existe ningún usuario con ese código. Asegúrese de que su usuario tiene un código RFID asociado e inténtelo de nuevo")
+            return HttpResponseRedirect(reverse('RFIDlogin'))
+    else:
+        return render(request, 'registration/login.html', locals())
+
+
+
+def rfid22_login(request):
     reader = SimpleMFRC522()
     try:
         import RPi.GPIO as GPIO
@@ -30,7 +51,7 @@ def rfid_login(request):
             return render_to_response('registration/login.html', {'error_message': "La pulsera asociada no existe." })
     except ImportError:
         return render_to_response('registration/login.html',
-        {'error_message':'No se ha podido establecer comunicación con el lector.'})
+                                  {'error_message':'No se ha podido establecer comunicación con el lector.'})
     finally:
         GPIO.cleanup()
 

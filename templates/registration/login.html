@@ -3,25 +3,26 @@
 {% load static %}
 <head>
 
-{#<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
-{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>#}
-{#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>#}
-<!------ Include the above in your HEAD tag ---------->
+    {#<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">#}
+    {#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>#}
+    {#<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>#}
+    <!------ Include the above in your HEAD tag ---------->
     <!-- JQuery CDN -->
     <script   src="https://code.jquery.com/jquery-3.3.1.min.js"
               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
               crossorigin="anonymous"></script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
 
-{#    <!-- Latest compiled and minified CSS -->#}
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"#}
-{#        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"#}
-{#        crossorigin="anonymous">#}
+    {#    <!-- Latest compiled and minified CSS -->#}
+    {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"#}
+    {#        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"#}
+    {#        crossorigin="anonymous">#}
 
     <!-- Optional theme -->
     <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -37,13 +38,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-	<!--Custom styles-->
-	<link rel="stylesheet" type="text/css" href="{% static "css/EleganLoginPage.css" %}">
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="{% static "css/EleganLoginPage.css" %}">
 
 </head>
 <body>
@@ -54,7 +55,7 @@
     <div class="container">
         <div class="d-flex justify content-center h-10">
 
-            <img class="logo" src="{% static "img/rPiMedia_logo.png" %}" width="250" height="250">
+            <img class="logo img-responsive" src="{% static "img/rPiMedia_logo.png" %}" width="15%" height="15%" >
         </div>
         <div class="d-flex justify content-center h-10 formerrors">
             {% if form.errors %}
@@ -62,7 +63,15 @@
             {% endif %}
 
             {% if error_message %}
-               <p>{{ error_message }}</p>
+                <p>{{ error_message }}</p>
+            {% endif %}
+
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
             {% endif %}
 
             {% if next %}
@@ -73,21 +82,21 @@
             {% endif %}
         </div>
         <div class="d-flex justify-content-center h-80">
-        <div id="RFIDText" class="container" style="display: none; ">
-            <p style="font-size: x-large; color: white; position: fixed; top: 60%; left: 26%"> Acerca la pulsera al lector rfid para iniciar sesión</p>
-        </div>
+            <div id="RFIDText" class="container" style="display: none; ">
+                <p style="font-size: x-large; color: white; position: fixed; top: 70%; left: 26%"> Acerca la pulsera al lector RFID para iniciar sesión</p>
+            </div>
             <div class="card">
 
                 <div class="card-header">
                     <h3>Inicia Sesión</h3>
-                    {% comment %}<div class="d-flex justify-content-end social_icon">
+                    <div class="d-flex justify-content-end social_icon invisible">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
 					<span><i class="fab fa-twitter-square"></i></span>
-				</div>{% endcomment %}
+				</div>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="{% url 'login' %}">{% csrf_token %}
+                    <form id="loginForm" method="post" action="{% url 'login' %}">{% csrf_token %}
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -102,7 +111,7 @@
                             <input id="password" type="password" class="form-control"  name="password"  placeholder="password">
                         </div>
                         <div class="row align-items-center remember">
-                            <input type="checkbox">Recuerdame
+                            <input type="checkbox">Recuérdame
                         </div>
                         <div class="form-group">
                             <input id="loginBtn" type="submit" value="Login" class="btn float-right login_btn">
@@ -118,43 +127,71 @@
                         <a href="{% url 'password_reset' %}">¿Has olvidado tu contraseña?</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a id='rfidLogin' href="{% url 'RFIDlogin' %}"> Inica sesión con pulsera</a>
+                        <a id='rfidLogin' href="{% url 'RFIDlogin' %}"> Inicia sesión con pulsera</a>
                     </div>
 
                 </div>
 
             </div>
         </div>
+        <form id="rfid_form" method="post" action="{% url 'RFIDlogin' %}">
+        {% csrf_token %}
+            <input type="hidden" value="" name="rfid_id">
+        </form>
     </div>
 {% endblock %}
 
 <script type="text/javascript">
-  $('#rfidLogin').on('click', hideLoginForm);
-  $('#loginBtn').on('click', loginAnimation);
+    $('#rfidLogin').on('click', hideLoginForm);
+    $('#loginBtn').on('click', loginAnimation);
 
+    function getRFID(){
+        let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    obj = JSON.parse(this.responseText);
+                    console.log(obj.rfid_id);
+                    $('input[name=rfid_id]').val(obj.rfid_id);
+                    {% comment %}let csrftoken = getCookie('csrftoken');
+                    $.post('{% url 'RFIDlogin' %}', {
+                        rfid_id : obj.rfid_id,
+                        csrfmiddlewaretoken: csrftoken
+                    });{% endcomment %}
+                }
+            };
+            xhr.open('GET', 'http://192.168.0.104:5000/' , true);
+            //xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            xhr.onload = function () {
+                $('#rfid_form').submit();
+                //window.location.reload(true);
 
-  function hideLoginForm(e){
-    e.preventDefault();
-    $('.card').slideUp('slow');
-    $('.logo').addClass('animate');
-    $('#RFIDText').delay(1500).fadeIn(3000, function () {
-        {#$.get( {% url 'RFIDlogin' %} );#}
-        console.log("Hide Login Form function executed");
-    });
-  };
+            };
+            xhr.onerror = function (e) {
+                alert("Error en la lectura");
+                {#window.location.replace('{% url 'admin:Galeria_regularuser_changelist' %}')#}
+            };
+            xhr.send();
+    }
+    function hideLoginForm(e){
+        e.preventDefault();
+        $('.formerrors').css('visibility','hidden');
+        $('.card').slideUp('slow');
+        $('.logo').addClass('animate');
+        $('#RFIDText').delay(1500).fadeIn(3000, getRFID);
+    };
 
-  function loginAnimation(e) {
-      {% if not form.errors %}
-      e.preventDefault();
-      var name = $( "input[name=username]" ).val();
-      $('.card').slideUp('slow');
-      $('.logo').addClass('animate');
-      $('#RFIDText').children("p").text("Iniciando sesión como " + name + "...");
-      $('#RFIDText').delay(1000).fadeIn(3000, function () {
-          $('form').submit();
-      });
-      {% endif %}
-  }
+    function loginAnimation(e) {
+        {% if not form.errors %}
+            e.preventDefault();
+            var name = $( "input[name=username]" ).val();
+            $('.card').slideUp('slow');
+            $('.logo').addClass('animate');
+            $('#RFIDText').children("p").text("Iniciando sesión como " + name + "...");
+            $('#RFIDText').delay(1000).fadeIn(3000, function () {
+                $('#loginForm').submit();
+            });
+        {% endif %}
+    }
 </script>
 </body>
 </html>
