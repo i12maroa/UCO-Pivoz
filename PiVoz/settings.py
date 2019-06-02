@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@+z$b_^*hq5*8nl2*c#0$433!3=w^%2s2(#fiaja7!c9aii&)o'
+SECRET_KEY = *********
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -170,7 +170,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = "******"
 
 # EMAIL_HOST = 'smtp.sendgrid.net'
 # EMAIL_HOST_USER = 'sendgrid_username'
@@ -186,7 +186,7 @@ REGISTRATION_OPEN = True
 
 # Django Google Maps API KEY
 
-GOOGLE_MAPS_API_KEY = 'AIzaSyAurb5ZABXUxF0QGpr2cyTEf_DJVKTD3k4'
+GOOGLE_MAPS_API_KEY = '*******'
 
 # Celery Config
 #CELERY_TASK_SERIALIZER = 'json'
