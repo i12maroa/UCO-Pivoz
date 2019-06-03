@@ -130,8 +130,8 @@ DATABASES = {
 #
 # AWS_STORAGE_BUCKET_NAME = 'pivoz'
 # AWS_S3_REGION_NAME = 'eu-west-1'  # e.g. us-east-2
-# AWS_ACCESS_KEY_ID = 'AKIAIPKETOZWAMSE5UUQ'
-# AWS_SECRET_ACCESS_KEY = 'fS8TFbNWUfxaazEBXEv7MBLIL08DuJi/8smLsGJ2'
+# AWS_ACCESS_KEY_ID = ***********
+# AWS_SECRET_ACCESS_KEY = *************
 #
 # # Tell django-storages the domain to use to refer to static files.
 # AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
