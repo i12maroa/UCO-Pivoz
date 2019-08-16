@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@+z$b_^*hq5*8nl2*c#0$433!3=w^%2s2(#fiaja7!c9aii&)o'
+SECRET_KEY = *********
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -138,8 +138,8 @@ DATABASES = {
 #
 # AWS_STORAGE_BUCKET_NAME = 'pivoz'
 # AWS_S3_REGION_NAME = 'eu-west-1'  # e.g. us-east-2
-# AWS_ACCESS_KEY_ID = 'AKIAIPKETOZWAMSE5UUQ'
-# AWS_SECRET_ACCESS_KEY = 'fS8TFbNWUfxaazEBXEv7MBLIL08DuJi/8smLsGJ2'
+# AWS_ACCESS_KEY_ID = ***********
+# AWS_SECRET_ACCESS_KEY = *************
 #
 # # Tell django-storages the domain to use to refer to static files.
 # AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
@@ -178,7 +178,11 @@ AUTHENTICATION_BACKENDS = [
 
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
+<<<<<<< HEAD
 SENDGRID_API_KEY = "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"
+=======
+SENDGRID_API_KEY = "******"
+>>>>>>> aeb6b6b098b82e0ddaf4c78697a4a5345a792a9c
 
 # EMAIL_HOST = 'smtp.sendgrid.net'
 # EMAIL_HOST_USER = 'sendgrid_username'
@@ -199,7 +203,7 @@ GRAPH_MODELS = {
 
 # Django Google Maps API KEY
 
-GOOGLE_MAPS_API_KEY = 'AIzaSyAurb5ZABXUxF0QGpr2cyTEf_DJVKTD3k4'
+GOOGLE_MAPS_API_KEY = '*******'
 
 # Celery Config
 #CELERY_TASK_SERIALIZER = 'json'
