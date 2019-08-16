@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Album, Imagen, Keyword, Video, Musica, Radio, RegularUser
+from .models import Album, Imagen, Keyword, Video, Radio, RegularUser
 from .forms import ImageForm, AdminCreationForm, AdminChangeForm, UserCreationForm, UserChangeForm, \
     RegularUserCreationForm
 from django.contrib.admin import AdminSite
@@ -10,11 +10,12 @@ from django.utils.html import format_html
 from Galeria.models import RegularUser, AdminUser
 from django.utils.text import slugify
 from jet.admin import CompactInline
-from django_admin_row_actions import AdminRowActionsMixin
+#from django_admin_row_actions import AdminRowActionsMixin
 from django.urls import reverse
 from django_google_maps import widgets as map_widgets
 from django_google_maps import fields as map_fields
 from Galeria.tasks import check_dictionary, add_keyword_to_dict, update_grammar
+
 
 # from django.contrib.admin.models import LogEntry, ADDITION, CHANGE
 # from django.contrib.contenttypes.models import ContentType
@@ -26,9 +27,6 @@ import logging
 
 class MyAdmin(AdminSite):
     AdminSite.site_header = 'Administración de PiVoz'
-
-
-# Register your models here.
 
 
 class AdminUserAdmin(BaseUserAdmin):
@@ -194,7 +192,7 @@ class AlbumM2MInline(CompactInline):
 #     fk_name = 'usuario'
 
 
-class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
+class RegularUserAdmin(BaseUserAdmin):
     add_form = RegularUserCreationForm
     form = UserChangeForm
     list_display = ('avatarPreview', 'username', 'email', 'rfid_vinculado', 'user_actions')
@@ -276,10 +274,13 @@ class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
         return format_html(
             '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar Usuario</a>&nbsp;'
             '<a class="button" href="{}" style="color:#fff; background-color:#3da311;">Vincular pulsera</a>&nbsp;'
-            '<a class="button" href="{}" style="color:#fff; background-color:#0e66cc;">Desvincular pulsera</a>',
+            '<a class="button" href="{}" style="color:#fff; background-color:#0e66cc;">Desvincular pulsera</a>&nbsp;'
+            '<a class="button" href="{}" style="color:#fff; background-color:#0e66cc;">Compartir Usuario</a>',
             reverse('admin:Galeria_regularuser_change', args=[obj.pk]),
             reverse('ReadRFID', args=[obj.pk]),
-            reverse('deleteRFID', args=[obj.pk]),)
+            reverse('deleteRFID', args=[obj.pk]),
+            reverse('shareUser', args=[obj.pk])
+            ,)
     user_actions.short_description = "Acciones de Usuario Regular"
     user_actions.allow_tags = True
 
@@ -299,16 +300,15 @@ class RegularUserAdmin(AdminRowActionsMixin, BaseUserAdmin):
 
 @admin.register(Imagen)
 class ImagenAdmin(admin.ModelAdmin):
-    list_display = ('preview', 'titulo', 'image_actions')
-    #exclude = ('path', 'image_actions',)
-    readonly_fields = ('vista_previa', 'image_actions')
+    list_display = ('image_tag', 'titulo', 'image_actions')
+    readonly_fields = ('image_tag', 'image_actions', 'fecha_creacion')
     fieldsets = (
         ('General', {
-            'fields': ('fichero_imagen', 'titulo', 'keyword', 'descripcion', 'album', 'vista_previa'),
+            'fields': ('fichero_imagen', 'titulo', 'keyword', 'descripcion', 'album', 'image_tag'),
         }),
         ('Opciones Avanzadas', {
             'classes': ('collapse',),
-            'fields': ('image_width', 'image_height'),
+            'fields': ('image_width', 'image_height', 'fecha_creacion'),
         }),
     )
 
@@ -349,21 +349,25 @@ class ImagenAdmin(admin.ModelAdmin):
     image_actions.short_description = "Administrar Imagen"
     image_actions.allow_tags = True
 
+    #def save_model(self, request, obj, form, change):
+    #    if obj.titulo == "":
+    #        obj.titulo = obj.fichero_imagen.url.split('/')[4]
+    #    super().save_model(request, obj, form, change)
+
 
 
 
 
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
-    fields = ['titulo', 'descripcion', 'thumbnail', 'keywords', 'address', 'geolocation', 'usuario', 'slug',
-              'created_by']
+    fields = ['titulo', 'descripcion', 'thumbnail', 'keywords', 'address', 'geolocation', 'usuario']
     formfield_overrides = {
         map_fields.AddressField: {'widget': map_widgets.GoogleMapsAddressWidget(attrs={'data-map-type': 'roadmap'})},
     }
     # prepopulated_fields = {'slug': ('titulo',)}
     readonly_fields = ['slug', 'created_by', 'album_actions']
     date_hierarchy = 'fecha_creacion'
-    list_filter = ('fecha_creacion', 'usuario')
+    list_filter = ('fecha_creacion',)
     list_display = ('Portada', 'titulo', 'get_n_elements', 'album_actions')
     inlines = [ImagenInstanceInline, VideoInstanceInline]
 
@@ -387,6 +391,10 @@ class AlbumAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return qs
         return qs.filter(created_by=request.user)
+
+    def get_field_queryset(self, db, db_field, request):
+        if db_field.name == 'usuario':
+            return RegularUser.objects.filter(adminuser=request.user)
 
     def Portada(self, obj):
         return mark_safe('<img style="border-radius:25px;" src="{url}" width="{width}" height={height} />'.format(
@@ -504,18 +512,22 @@ class KeywordAdmin(admin.ModelAdmin):
     # Añade como usuario al usuario admin que creo la palabra clave
     def save_model(self, request, obj, form, change):
         obj.keyword = obj.keyword.lower()
-        is_registered = check_dictionary.delay(obj.keyword)
-        if is_registered:
-            print("La palabra " + obj.keyword + " está registrada en el diccionario.")
-            update_grammar.delay(obj.keyword)
+        words = obj.keyword.split(" ")
+        for word in words:
+            is_registered = check_dictionary(word)
+            if not is_registered:
+                print("La palabra " + word + " no está registrada en el diccionario.")
+                add_keyword_to_dict.delay(word)
             # super(Keyword, obj).save()
+        if len(words) > 1:
+            update_grammar.delay('(' + obj.keyword + ')')
         else:
-            add_keyword_to_dict.delay(obj.keyword)
             update_grammar.delay(obj.keyword)
             # super(Keyword, obj).save(*args, **kwargs)
         if request.user.is_superuser:
-            obj.usuario = 1
-        obj.usuario = request.user.adminuser
+            pass
+        else:
+            obj.usuario = request.user.adminuser
         super().save_model(request, obj, form, change)
 
     def get_queryset(self, request):
@@ -528,7 +540,6 @@ class KeywordAdmin(admin.ModelAdmin):
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'video_actions')
-    exclude = ('path',)
 
     def get_queryset(self, request):
         qs = super(VideoAdmin, self).get_queryset(request)
@@ -536,26 +547,23 @@ class VideoAdmin(admin.ModelAdmin):
             return qs
         return qs.filter(album__created_by=request.user)
 
+    def get_field_queryset(self, db, db_field, request):
+        if db_field.name == 'album':
+            return Album.objects.filter(created_by=request.user)
+
     def video_actions(self, obj):
         return format_html(
             '<a class="button" href="{}" style="color:#fff; background-color:#7c0caf;">Modificar Video</a>&nbsp;'
             '<a class="button " href="{}" style="color:#fff; background-color:#c14747;">Eliminar Video </a>',
-            reverse('admin:Galeria_album_change', args=[obj.pk]),
-            reverse('admin:Galeria_album_delete', args=[obj.pk])
+            reverse('admin:Galeria_video_change', args=[obj.pk]),
+            reverse('admin:Galeria_video_delete', args=[obj.pk])
             ,)
     video_actions.short_description = "Administrar Video"
     video_actions.allow_tags = True
 
-
-@admin.register(Musica)
-class MusicaAdmin(admin.ModelAdmin):
-    list_display = ('titulo',)
-    exclude = ('descripcion', 'path', 'fecha_creacion',)
-
-
 @admin.register(Radio)
 class RadioAdmin(admin.ModelAdmin):
-    list_display = ('nombre',)
+    list_display = ('image_tag', 'nombre')
 
     # Now register the new UserAdmin...
 

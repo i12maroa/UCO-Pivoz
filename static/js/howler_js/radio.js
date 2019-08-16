@@ -111,37 +111,3 @@ Radio.prototype = {
     window['playing' + index].style.display = state ? 'block' : 'none';
   }
 };
-
-// Setup our new radio and pass in the stations.
-var radio = new Radio([
-  {
-    freq: '81.4',
-    title: "BBC Radio 1",
-    src: 'http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_q',
-    howl: null
-  },
-  {
-    freq: '89.9',
-    title: "Hip Hop Hits",
-    src: 'http://tunein4.streamguys1.com/hhbeafree5',
-    howl: null
-  },
-  {
-    freq: '98.9',
-    title: "CNN",
-    src: 'http://tunein.streamguys1.com/cnn',
-    howl: null
-  },
-  {
-    freq: '103.3',
-    title: "80's Hits",
-    src: 'http://tunein4.streamguys1.com/80shtfree1',
-    howl: null
-  },
-  {
-    freq: '107.7',
-    title: "Today's Hits",
-    src: 'http://rfcmedia.streamguys1.com/MusicPulse.mp3',
-    howl: null
-  }
-]);

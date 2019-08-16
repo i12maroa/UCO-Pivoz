@@ -710,6 +710,7 @@ a[data-lightbox]:hover img{
 	right:0;
 	bottom:-10px;
 	text-align:center;
+	font-size: 300%;
 }
 .fullscreen-modal{
 	background:#000;
@@ -1245,3 +1246,6 @@ h1,h2,h3,h4,h5,h6,p,label,.btn,a{
 }
 }
 
+.titulo {
+	font-size: 250%;
+}

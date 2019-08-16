@@ -12,13 +12,14 @@ grammar piCommand;
 public <basicCmd> = <keyword> <command>;
 
 <command> = <action> <object>*;
-<action> = (/11/mostrar |/10/(muestra me) |/10/ muestra |/3/ver | /3/ enseña | /3/ (enseña me) | /2/ abre |
+<action> = (/11/mostrar |/10/(muestra me) |/10/ muestra |/4/ver | /3/ enseña | /3/ (enseña me) | /2/ abre |
             /12/siguiente | /12/ anterior | /8/salir | /12/atrás | /12/adelante |
             (subir volumen) | (bajar volumen) | pausa | reproducir | continuar |
-            (menu principal) | menu | fotos | imágenes | fotografías | álbum | album | albumes | radio | videos | ((pon | ponme) (los cuarenta) | (cadena cien) | (cadena dial) | (cadena cope) | (europa efe eme) | (canal sur radio) | (rock efe eme)));
+            (menu principal) | menu | (mi perfil) | fotos | imágenes | fotografías | álbum | album | albumes | radio | videos |
+            (pon los cuarenta principales) | (pon cadena cien) | (pon cadena dial) | (pon cadena cope) | (pon europa fm) | (pon canal sur radio) | (pon rock fm));
 
-<object> = [todos los| todas las | los | las | la ] ( /10/fotos | imágenes | fotografías | videos ) [de <keyTag>];
-<keyTag> =  ()*;
-<ubication> = (lisboa | (mezquita de córdoba) | córdoba)*;
+<object> = [todos los| todas las | los | las | la ] ( /10/fotos | imágenes | fotografías | videos ) [de <keyTag>] [en <ubication>];
+<keyTag> =  (juan | bosque | carretera | lago | montañas | puente | (san francisco) | valle | sara | yo | lisboa | martinilla | (plaza del comercio) | (lo malo) | cosas | coche | paula | alfama | campo | cuarenta | (cuarenta principales) | (cuarenta principales) | (cadena dial) | maxima | (cadena cien) | (cadena cope) | (europa fm) | (canal sur radio) | (rock fm) | prueba | (muestra fotos) | pivoz | abstracto | cien | cope | dial  | vías | canon | musica | playa | polonia | cracovia | mezquita | dibujos | amigos | noria | (big ben) | castillo | casas | colores | tren | reloj | navidad | autobús | támesis | vacaciones | (punta cana) | presentacion | pepa)*;
+<ubication> = ((la carlota) | (aldea quintana) | (el rinconcillo) | sevilla | madrid | (el palo) | (camino guiral) | córdoba | cracovia | londres | (punta cana))*;
 
 <keyword> = (pivoz);

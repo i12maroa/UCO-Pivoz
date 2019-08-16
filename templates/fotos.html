@@ -2,62 +2,88 @@
 {% load static %}
 
 {% block pageTitle %} PiVoz - Galeria Multimedia{% endblock %}
-
+{% block extrahead %}
+    <script src="{% static "/js/blocs.js" %}"></script>
+    <script src="{% static "/js/lazysizes.min.js" %}" defer></script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+    <script src="{% static "js/recorder/dist/recorder.js" %}"></script>
+{% endblock %}
 {% block content %}
 
-<!-- bloc-1 -->
+    <!-- bloc-1 -->
 
 
-<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream none b-parallax full-width-bloc" id="bloc-1">
-    <div class="container fill-bloc-top-edge">
-			<div class="row">
-					<div class="col-sm-12">
-						<h2 id="titulo" class="text-center mg-md  tc-honeydew glow-t mg-clear">
-							Galería de fotos
-						</h2>
-						<div id="micBtn" class="text-center">
-                    <btn id="startButton" class="animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime" data-toggle="tooltip" title="" data-original-title="Pulsa para empezar a hablar"></span></btn>
-                            <div id="infoBalloon"></div>
-            </div>
-          </div>
-        </div>
-			</div>
-
-    <div class="container b-divider">
-
-
-        <div id="imageGridAll" class="row voffset animated vanishIn gallery" style="margin: 8em 2em 4em 2em" >
-
-            {% for image in imagenes %}
-                {% comment %}{% if image.id_multimedia == ""  %}{% endcomment %}
-                <div class="col-sm-2">
-                    <a href="#" data-lightbox="{{ image.fichero_imagen.url }}" data-caption="{{ image.titulo }}" data-frame="fullscreen-lb" data-gallery-id="gallery-1"><img src="{{ image.thumbnail.url }}" data-src="{{ image.thumbnail.url }}" class="img-responsive animated pulse-hvr lazyload" /></a>
-                    <h3 class="mg-md tc-mint-cream">
-                        {{ image.titulo|truncatechars:14 }}
-                    </h3>
-                    <p>
-                        {% for key in image.keyword.all %}{{ key }}{% if not forloop.last %} - {% endif %}{% endfor %}
-                    </p>
+    <div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream none b-parallax full-width-bloc" id="bloc-1">
+        <div class="container fill-bloc-top-edge">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 id="titulo" class="text-center mg-md  tc-honeydew glow-t mg-clear">
+                        {% if slug %}{{ slug }}{% else %} Imágenes {% endif %}
+                    </h2>
+                    <div id="micBtn" class="text-center">
+                        <btn id="startButton" class="animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime" data-toggle="tooltip" title="" data-original-title="Pulsa para empezar a hablar"></span></btn>
+                        <div id="infoBalloon"></div>
+                    </div>
                 </div>
-            {% endfor %}
+            </div>
         </div>
 
-	</div>
-</div>
+        <div class="container b-divider">
 
-	<!-- bloc-1 END -->
+            <div id="imageGridAll" class="row gallery" style="margin: 8em 2em 4em 2em" >
+                <div class="row"  style="margin-top: 5px">
+                    {% if imagenes %}
+                        {% for image in imagenes %}
+                            {% comment %}{% if image.id_multimedia == ""  %}{% endcomment %}
+                            {% if forloop.counter0|divisibleby:6 %} </div><div class="row"> {% endif %}
+                        <div class="col-sm-2">
+                            <a href="#" data-lightbox="{{ image.fichero_imagen.url }}" data-caption="{{ image.titulo }}" data-frame="fullscreen-lb" data-gallery-id="gallery-1"><img src="{{ image.thumbnail.url }}" data-src="{{ image.thumbnail.url }}" class="img-responsive animated pulse-hvr lazyload" /></a>
+                            <h3 class="mg-md tc-mint-cream titulo">
+                                {{ image.titulo|truncatechars:14 }}
+                            </h3>
+                            <p>
+                                {% for key in image.keyword.all %}{{ key }}{% if not forloop.last %} - {% endif %}{% endfor %}
+                            </p>
+                        </div>
 
-<script>
+                        {% if forloop.last %} </div> {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% if videos %}
+                    {% for video in videos %}
+                        {% if forloop.counter0|divisibleby:6 %} </div><div class="row"> {% endif %}
+                    <div class="col-sm-2" >
+                        <a href="#" data-lightbox="{{ video.fichero_video.url}}"  data-frame="fullscreen-lb" data-gallery-id="gallery-1">
+                            <div class="embed-responsive embed-responsive-16by9 animated swing-hvr {% if forloop.first and not imagenes%}focus{% endif %}" style="margin-bottom:5%">
+
+                                <video controls class="embed-responsive-item lazyload"  data-frame="fullscreen-lb" data-src="{{ video.fichero_video.url }}" data-lightbox="{{ video.fichero_video.url }}">
+                                Your browser does not support HTML5 video.
+                                </video>
+
+                            </div>
+                        </a>
+                        <h3 class="mg-md tc-mint-cream titulo">
+                            {{ video.titulo }}
+                        </h3>
+                        <p style="color: white">
+                            {% for key in video.keyword.all %}{{ key }}{% if not forloop.last %} - {% endif %}{% endfor %}
+                        </p>
+                    </div>
+                    {% if forloop.last %} </div> {% endif %}
+                    {% endfor %}
+                {% endif %}
+        </div>
+
+
+    </div>
+
+    <!-- bloc-1 END -->
+
+    <script>
         $(document).ready(function () {
             $('img.img-responsive:first').addClass('focus');
-
-            document.querySelector('btn').addEventListener('click', function() {
-                  context.resume().then(() => {
-                    console.log('Playback resumed successfully');
-  });
-});
-        })
-</script>
+        });
+    </script>
 
 
 {% endblock %}

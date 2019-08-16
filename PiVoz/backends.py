@@ -5,7 +5,7 @@ from Galeria.models import RegularUser
 
 
 class RFIDAuthentication:
-    def authenticate(self, rfid):
+    def authenticate(self, request,  rfid):
         try:
             usuario = RegularUser.objects.get(rfid=rfid)
             return usuario

@@ -15,22 +15,22 @@ Including another URLconf
 """
 
 from django.urls import path, re_path
-from .views import imageGallery, videoGallery, musicGallery, radio, playlist, record_web_audio, upload, AlbumDetail, \
-    albumGallery, read_rfid, delete_rfid
+from .views import image_gallery, video_gallery, music_gallery, radio, record_web_audio, upload, album_detail, \
+    album_gallery, read_rfid, delete_rfid, share_user
 
 #app_name = 'galeria'
 urlpatterns = [
-    path('images/', imageGallery, name="imageGallery"),
-    path('videos/', videoGallery, name="videoGallery"),
-    path('music/', musicGallery, name="musicGallery"),
-    path('albums/', albumGallery, name="albumsGallery"),
-    path('playlist/', playlist, name="playlist"),
+    path('images/', image_gallery, name="imageGallery"),
+    path('videos/', video_gallery, name="videoGallery"),
+    path('music/', music_gallery, name="musicGallery"),
+    path('albums/', album_gallery, name="albumsGallery"),
     path('music/radio', radio, name="radios"),
     path('recorder/', record_web_audio, name="recorder"),
     path('uploadAudio/', upload, name="uploadAudio"),
-    path('albumImage/<slug:slug>/', AlbumDetail, name="albumsGalleryDetailView"),
+    path('albumImage/<slug:slug>/', album_detail, name="albumsGalleryDetailView"),
     re_path(r'^RFID/(?P<user>\d+)/$', read_rfid, name="ReadRFID"),
     re_path(r'^deleteRFID/(?P<user>\d+)/$', delete_rfid, name="deleteRFID"),
+    re_path(r'^user/share/(?P<user>\d+)/$', share_user, name="shareUser"),
 
 
 ]

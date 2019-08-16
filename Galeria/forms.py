@@ -17,8 +17,7 @@ from django.utils.text import slugify
 class ImageForm(forms.ModelForm):
     class Meta:
         model = models.Imagen
-        fields = ['id_multimedia',
-                  'titulo',
+        fields = ['titulo',
                   'descripcion',
                   'album',
                   'keyword',
@@ -31,6 +30,9 @@ class ImageForm(forms.ModelForm):
             if (self.request.method == 'POST' and self.request.FILES):
                 uploaded_file = self.request.FILES
                 self.fields['titulo'] = uploaded_file['fichero_imagen'].name
+
+class ShareUserForm(forms.Form):
+    administrador = forms.CharField(label='Administrador con el que quiere compartir el usuario', max_length=100)
 
 
 # class AlbumForm(forms.ModelForm):

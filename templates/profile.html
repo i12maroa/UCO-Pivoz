@@ -6,10 +6,36 @@
 
 {% block pageTitle %} PiVoz - {{ request.user.username }}{% endblock %}
 
+{% block extrahead %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no">
+    <link rel="stylesheet" href="{% static "/css/radio.css" %}">
+    <script src="{% static "/js/lazysizes.min.js" %}" defer></script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+    <script src="{% static "js/recorder/dist/recorder.js" %}"></script>
+    <title>RadioPivoz</title>
+{% endblock %}
+
 {% block content %}
 
+    <div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream none b-parallax full-width-bloc" id="bloc-1">
+        <div class="container fill-bloc-top-edge">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 id="titulo" class="text-center mg-md  tc-honeydew glow-t mg-clear">
+                         {{ request.user.username }}
+                    </h2>
+                    <div id="micBtn" class="text-center">
+                        <btn id="startButton" class="animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime" data-toggle="tooltip" title="" data-original-title="Pulsa para empezar a hablar"></span></btn>
+                        <div id="infoBalloon"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     <!-- bloc-3 -->
-<div class="bloc bgc-mint-cream bloc-fill-screen bg-artificial-background-close-up-958168 tc-white-2 l-bloc" id="bloc-3">
+<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream none b-parallax full-width-bloc" id="bloc-1">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-8 col-md-offset-2">
@@ -19,18 +45,19 @@
 					</div>
 				</div><img src="{% static "img/lazyload-ph.png" %}" data-src="{{ request.user.avatar.url }}" class="img-circle animated vanishIn mg-sm center-block img-rd-lg lazyload" width="200" height="200" />
 				<h3 class="statement-bloc-text text-center mg-md  tc-white-2 animated vanishIn">
-					<strong> Nombre completo: </strong> {{ request.user.first_name }} {{ request.user.last_name }} <br>
+					{% if request.user.first_name %}<strong> Nombre completo: </strong> {{ request.user.first_name }} {{ request.user.last_name }} <br>{% endif %}
                     <strong> Correo Electrónico: </strong> {{ request.user.email }} <br>
                     <strong> Teléfono:</strong> {{ request.user.telefono }}
-                    {% if not request.user.is_staff %}
-                    <strong><i>El Usuario no tiene permisos de administrador.</i></strong>
-                        {% else %}
-                        <strong><i>El Usuario tiene permisos de administrador.</i></strong>
-                    {% endif %}
+                    <div class="container">
+                        Cuenta administrada por:
+                        <ul>
+                            {% for admin in admins %}
+                            <li> {% if admin.first_name and admin.last_name %}{{ admin.first_name }} {{ admin.last_name }}{% else %} {{ admin.username  }}{% endif %} </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
 				</h3>
-				<p class="text-center animated vanishIn">
-					<strong>{{ request.user.username }}</strong>
-				</p>
 				<div class="row">
 					<div class="col-sm-12">
 					</div>

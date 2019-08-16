@@ -11,7 +11,7 @@
     <script   src="https://code.jquery.com/jquery-3.3.1.min.js"
               integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
               crossorigin="anonymous"></script>
-    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+{#    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>#}
 
     {#    <!-- Latest compiled and minified CSS -->#}
     {#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"#}
@@ -28,6 +28,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static "/css/animate.min.css" %}">
 
 
 
@@ -88,7 +90,7 @@
             <div class="card">
 
                 <div class="card-header">
-                    <h3>Inicia Sesión</h3>
+                    <h3 id="titulo">Inicia Sesión</h3>
                     <div class="d-flex justify-content-end social_icon invisible">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -96,7 +98,7 @@
 				</div>
                 </div>
                 <div class="card-body">
-                    <form id="loginForm" method="post" action="{% url 'login' %}">{% csrf_token %}
+                    <form id="loginForm" method="post" action="{% url 'mylogin' %}">{% csrf_token %}
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -126,62 +128,115 @@
                     <div class="d-flex justify-content-center">
                         <a href="{% url 'password_reset' %}">¿Has olvidado tu contraseña?</a>
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <a id='rfidLogin' href="{% url 'RFIDlogin' %}"> Inicia sesión con pulsera</a>
-                    </div>
 
                 </div>
+                <div id="allowed_rfid" style="text-align: center; padding-top: 10px;">
+                        <img src="{% static "img/wristband_colored.png" %}" width="100px" height="100px" >
+                        <p style="color: white"> Inicie sesión con RFID</p>
+                </div>
 
-            </div>
         </div>
-        <form id="rfid_form" method="post" action="{% url 'RFIDlogin' %}">
-        {% csrf_token %}
-            <input type="hidden" value="" name="rfid_id">
-        </form>
+
     </div>
 {% endblock %}
 
 <script type="text/javascript">
     $('#rfidLogin').on('click', hideLoginForm);
     $('#loginBtn').on('click', loginAnimation);
+    var urlIndex = '{% url 'home' %}';
+    var clientIP = '{{ cliente }}';
 
-    function getRFID(){
-        let xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    obj = JSON.parse(this.responseText);
-                    console.log(obj.rfid_id);
-                    $('input[name=rfid_id]').val(obj.rfid_id);
-                    {% comment %}let csrftoken = getCookie('csrftoken');
-                    $.post('{% url 'RFIDlogin' %}', {
-                        rfid_id : obj.rfid_id,
-                        csrfmiddlewaretoken: csrftoken
-                    });{% endcomment %}
-                }
-            };
-            xhr.open('GET', 'http://192.168.0.104:5000/' , true);
-            //xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            xhr.onload = function () {
-                $('#rfid_form').submit();
-                //window.location.reload(true);
+    var OSName="Desconocido";
+    if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+    if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+    if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+    if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+    if (navigator.appVersion.indexOf("Android")!=-1) OSName="Android";
+    //document.getElementById('titulo').innerHTML = OSName +navigator.appVersion ;
 
-            };
-            xhr.onerror = function (e) {
-                alert("Error en la lectura");
-                {#window.location.replace('{% url 'admin:Galeria_regularuser_changelist' %}')#}
-            };
-            xhr.send();
+    if (OSName != 'Linux'){
+        $('#allowed_rfid').hide();
     }
+
+
+
+
+    {% comment %}function getRFID(){
+        let xhr = new XMLHttpRequest();
+        console.log("Trying to get rfid");
+        xhr.onreadystatechange = function () {
+            if(this.readyState == 4 && this.status == 200){
+                obj = JSON.parse(this.responseText);
+                console.log('rfid:' + obj.rfid_id + '   IP:' + obj.ip + ' Req IP:' + obj.client_ip  );
+                access_token = getCookie('access_token');
+                console.log(access_token);
+                if (obj.rfid_id != "" && obj.ip == obj.client_ip){
+                    $('input[name=rfid_id]').val(obj.rfid_id);
+                    $('#rfid_form').submit();
+                }
+            }
+        };
+        xhr.open('GET', '{% url 'getRFIDfromF' %}', true);
+        xhr.onload = function () {
+
+            //if (obj.rfid_id != "" && obj.ip == obj.client_ip){
+            //    $('#rfid_form').submit();
+            //}
+        };
+        xhr.onerror = function () {
+            //$('#rfid_form').submit();
+                //window.location.replace(urlIndex);
+        };
+        xhr.send();
+    }{% endcomment %}
+    {#if (navigator.platform == 'Linux armv7l'){#}
+    {#    setInterval(function () {#}
+    {#        getRFID()#}
+    {#    }, 10000);#}
+
+    {#function getRFID(){#}
+    {#    let xhr = new XMLHttpRequest();#}
+    {##}
+    {#        xhr.onreadystatechange = function() {#}
+    {#            if (this.readyState === 4 && this.status === 200) {#}
+    {#                obj = JSON.parse(this.responseText);#}
+    {#                console.log(obj.rfid_id);#}
+    {#                $('input[name=rfid_id]').val(obj.rfid_id);#}
+    {#                {% comment %}let csrftoken = getCookie('csrftoken');#}
+    {#                $.post('{% url 'RFIDlogin' %}', {#}
+    {#                    rfid_id : obj.rfid_id,#}
+    {#                    csrfmiddlewaretoken: csrftoken#}
+    {#                });{% endcomment %}#}
+    {#            }#}
+    {#        };#}
+    {#        xhr.open('GET', 'http://' + clientIP + ':5000', true);#}
+    {#        xhr.timeout = 10000;#}
+    {#        //xhr.setRequestHeader("X-CSRFToken", csrftoken);#}
+    {#        xhr.onload = function () {#}
+    {#            $('#rfid_form').submit();#}
+    {#            //window.location.reload(true);#}
+    {##}
+    {#        };#}
+    {#        xhr.ontimeout = function () {#}
+    {#            $('#rfid_form').submit();#}
+    {#        };#}
+    {#        xhr.onerror = function (e) {#}
+    {#            $('#rfid_form').submit();#}
+    {#            window.location.replace(urlIndex);#}
+    {#        };#}
+    {#        xhr.send();#}
+
     function hideLoginForm(e){
         e.preventDefault();
         $('.formerrors').css('visibility','hidden');
         $('.card').slideUp('slow');
         $('.logo').addClass('animate');
-        $('#RFIDText').delay(1500).fadeIn(3000, getRFID);
+        $('#RFIDText').delay(1500).fadeIn(3000);
     };
 
     function loginAnimation(e) {
-        {% if not form.errors %}
+        {% if not errors %}
+            $('.formerrors').css('visibility','hidden');
             e.preventDefault();
             var name = $( "input[name=username]" ).val();
             $('.card').slideUp('slow');

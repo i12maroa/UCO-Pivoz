@@ -100,22 +100,36 @@
 }
 
 .gallery img {
-	filter: blur(5px);
+	/*filter: blur(5px);*/
 	transition: 1s;
 }
+
 
 .gallery img:hover {
 	filter: blur(0);
 }
 .gallery img.focus{
-	transform: scale(1.2);
-	filter: blur(0px);
-	/*border: 1px solid crimson;*/
+	/*transform: scale(1.2);*/
+	/*filter: blur(0px);*/
+	border: 4px solid dodgerblue;
 }
 
+
 .focus{
-	transform: scale(1.2);
+	/*transform: scale(1.2);*/
+	border: 4px solid dodgerblue;
 }
+
+.gallery div.focus{
+	/*transform: scale(1.2);*/
+	border: 4px solid dodgerblue;
+}
+
+.albumGallery {
+	margin: 2em 7em 2em 3em ;
+}
+
+
 
 /*!*Button Animation*!*/
 

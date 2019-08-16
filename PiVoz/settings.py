@@ -24,10 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@+z$b_^*hq5*8nl2*c#0$433!3=w^%2s2(#fiaja7!c9aii&)o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-#ALLOWED_HOSTS = ['localhost', '127.0.0.1', '111.222.333.444', 'mywebsite.com', '192.168.0.105']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ucopivoz.com', 'www.ucopivoz.com','*']
 
 ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
@@ -39,14 +39,19 @@ CORS_ORIGIN_ALLOW_ALL = True
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 
+SESSION_EXPIRE_SECONDS = 3000  # 5 minutes
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 # Application definition
 
 INSTALLED_APPS = [
     'jet',                                      # https://github.com/geex-arts/django-jet
     'jet.dashboard',
+    'jet_django',
     'corsheaders',
-    'django_filters',                           # https://github.com/carltongibson/django-filter
-    'django_admin_row_actions',                 # https://github.com/DjangoAdminHackers/django-admin-row-actions
+    #'django_admin_row_actions',                 # https://github.com/DjangoAdminHackers/django-admin-row-actions
     'django_celery_results',
     'django_extensions',
     'sendgrid',                                 # https://github.com/sendgrid
@@ -62,14 +67,17 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',        # https://github.com/un1t/django-cleanup
     'phonenumber_field',                        # https://github.com/stefanfoulis/django-phonenumber-field
     'imagekit',                                 # https://github.com/matthewwithanm/django-imagekit
+    #'simple_history',
     #'storages',
 ]
 
 MIDDLEWARE = [
+    'simple_history.middleware.HistoryRequestMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -97,7 +105,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'PiVoz.wsgi.application'
+#WSGI_APPLICATION = 'PiVoz.wsgi.application'
 
 
 # Database
@@ -159,8 +167,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
     'PiVoz.backends.RFIDAuthentication',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 
@@ -170,7 +178,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = "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"
 
 # EMAIL_HOST = 'smtp.sendgrid.net'
 # EMAIL_HOST_USER = 'sendgrid_username'
@@ -183,6 +191,11 @@ SENDGRID_API_KEY = "SG.v09q22r_Rvmav9WcONzkuA.2BdhacVOx00olAqNDXK9_DLXERImUAmgju
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
 REGISTRATION_OPEN = True
 
+
+GRAPH_MODELS = {
+  'all_applications': False,
+  'group_models': True,
+}
 
 # Django Google Maps API KEY
 
@@ -218,7 +231,7 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'Galeria.MyUser'
 
-LOGIN_REDIRECT_URL = 'home'
+#LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
 

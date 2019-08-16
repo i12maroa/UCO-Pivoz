@@ -22,15 +22,20 @@ from django.conf.urls.static import static
 from django_registration.backends.activation.views import RegistrationView
 from Galeria.forms import AdminUserForm
 from django.contrib.auth import views as auth_views
+from jet_django.urls import jet_urls
+
 
 urlpatterns = [
                   path('jet/', include('jet.urls', 'jet')),
                   path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+                  path('jet_api/', include(jet_urls)),
                   path('admin/', admin.site.urls),
                   path('galeria/', include('Galeria.urls')),
-                  path('login/rfid/', views.rfid_login, name='RFIDlogin'),
-                  # path('login/', views.my_login, name='myLogin'),
+                  path('login/rfid/<access_token>/', views.rfid_login, name='RFIDlogin'),
+                  path('read_rfid/', views.recibir_rfid, name='getRFIDfromF'),
+                  #path('login/', views.my_login, name='mylogin'),
                   path('logout/', auth_views.LogoutView.as_view(), {'next_page': 'http://127.0.0.1:8000'}, name='logout'),
+                  path('accounts/login/', views.my_login, name='mylogin'),
                   path('accounts/', include('django.contrib.auth.urls')),
                   path(
                       'accounts/register/',

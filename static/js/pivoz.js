@@ -64,7 +64,6 @@ function makeLink() {
                             break;
 
                         case "volumeUp":
-                            // TODO: Implementar subir volumen de videos
                             var volume = $('video.focus').prop('volume');
                             console.log("Volumen: " + volume)
                             var newVolume = volume + 0.1;

@@ -2,7 +2,12 @@
 {% load static %}
 
 {% block pageTitle %} PiVoz - Galeria Multimedia{% endblock %}
-
+{% block extrahead %}
+<script src="{% static "/js/blocs.js" %}"></script>
+    <script src="{% static "/js/lazysizes.min.js" %}" defer></script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+    <script src="{% static "js/recorder/dist/recorder.js" %}"></script>
+{% endblock %}
 {% block content %}
 
 
@@ -30,15 +35,17 @@
 
         <div id="VideoGrid" class="row voffset animated vanishIn">
             {% for video in videos %}
-                <div class="col-sm-3">
-                    <div class="embed-responsive embed-responsive-16by9 animated swing-hvr">
-                        <a href="#" data-lightbox="{{ video.fichero_video.url}}"  data-frame="fullscreen-lb" data-gallery-id="gallery-1"></a>
-                            <video controls class="embed-responsive-item lazyload" data-src="{{ video.fichero_video.url }}">
-                                Your browser does not support HTML5 video.
-                            </video>
+                <div class="col-sm-3" >
+                    <a href="#" data-lightbox="{{ video.fichero_video.url }}" data-gallery-id="gallery-1" data-frame="fullscreen-lb" data-autoplay="1">
+                    <div class="embed-responsive embed-responsive-16by9 animated swing-hvr ">
+{#                        <a href="#" data-lightbox="{{ video.fichero_video.url}}"  data-frame="fullscreen-lb" data-gallery-id="gallery-1"></a>#}
+                        <video controls class="embed-responsive-item lazyload" data-frame="fullscreen-lb" data-src="{{ video.fichero_video.url }}" data-lightbox="{{ video.fichero_video.url }}">
+                            Your browser does not support HTML5 video.
+                        </video>
 
                     </div>
-                    <h3 class="mg-md tc-mint-cream">
+                    </a>
+                    <h3 class="mg-md tc-mint-cream titulo">
                         {{ video.titulo }}
                     </h3>
                     <p style="color: white">
@@ -57,7 +64,7 @@
     <script>
 
     $(document).ready(function () {
-        $('video:first').addClass('focus');
+        $('video:first').parent().addClass('focus');
     });
 
     $('video').bind('play', function () {

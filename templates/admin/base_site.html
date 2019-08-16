@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block extrahead %}<link rel="shortcut icon" type="image/png" href="{% static "img/rPiMedia_logo.png" %}" {% endblock %}
-{% block title %}{{ title }} | {% trans "PiVoz" %}{% endblock %}
+{% block title %}{{  title }} {% trans "PiVoz" %}{% endblock %}
 
 {% block extrastyle %}
     {% comment %}<link rel="stylesheet" href="{% static "css/bootstrap.css" %}" id="boostrap-css">
@@ -140,5 +140,4 @@
         </a>
     </h1>
 {% endblock %}
-
 

@@ -9,6 +9,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="shortcut icon" type="image/png" href="{% static "favicon.png" %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicons/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "favicons/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicons/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "favicons/site.webmanifest" %}">
+    <link rel="mask-icon" href="{% static "favicons/safari-pinned-tab.svg" %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#000000">
 
     <link rel="stylesheet" type="text/css" href="{% static "/css/bootstrap.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
@@ -18,6 +25,8 @@
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static "/css/ionicons.min.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "/css/main.css" %}">
+
+    <!-- Google API maps -->
     <link href='https://fonts.googleapis.com/css?family=Pacifico&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     {% comment %}<style type='text/css'>
@@ -27,19 +36,13 @@
 
     <script src="{% static "/js/jquery-2.1.0.min.js" %}"></script>
     <script src="{% static "/js/bootstrap.js" %}"></script>
-    <script src="{% static "/js/blocs.js" %}"></script>
-    <script src="{% static "/js/lazysizes.min.js" %}" defer></script>
-    <script>
 
-        var uploadAudio_url = "{% url "uploadAudio" %}";
-    </script>
-    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
-    <script src="{% static "js/recorder/dist/recorder.js" %}"></script>
 
     <title>{% block pageTitle %}{% endblock %}</title>
 
     <!-- URLS Variables for JS-Django Usage -->
     <script>
+        var uploadAudio_url = "{% url "uploadAudio" %}";
         var urlImages = '{% url 'imageGallery' %}';
         var urlVideos = '{% url 'videoGallery' %}';
         var urlAlbums = '{% url 'albumsGallery' %}';
@@ -47,7 +50,10 @@
         var urlIndex = '{% url 'home' %}';
         var urlLogout = '{% url 'logout' %}';
         var urlProfile = '{% url 'profile' %}';
+        {#var urlRfidLogin = '{% url 'RFIDlogin' %}';#}
     </script>
+
+    {% block extrahead %}{% endblock %}
 
     <!-- Google Analytics -->
 
@@ -126,8 +132,14 @@
 
 
 
-{% block subnav %}
-
+{% block messages %}
+    {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 {% endblock %}
 
 {% block content %}

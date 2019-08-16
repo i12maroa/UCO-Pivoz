@@ -2,74 +2,81 @@
 {% load static %}
 
 {% block pageTitle %} PiVoz - Albums{% endblock %}
-
+{% block extrahead %}
+    <script src="{% static "/js/blocs.js" %}"></script>
+    <script src="{% static "/js/lazysizes.min.js" %}" defer></script>
+    <script src="{% static "js/recorder/recorderJS_example.js" %}"></script>
+    <script src="{% static "js/recorder/dist/recorder.js" %}"></script>
+{% endblock %}
 {% block content %}
-<script>
 
-function startButton(btn) {
-    if (recorder.recording == false) {
-        startRecording(btn);
-    }
-    else {
-        stopRecording(btn);
-    }
+    <!-- bloc-1 -->
 
-}
-</script>
-<!-- bloc-1 -->
+    <div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream" id="bloc-1">
+        <div class="container fill-bloc-top-edge">
+            <div class="row">
 
-<div class="bloc bgc-mint-cream bg-77a855c9743d36a932fb5910cb37c5ef bloc-fill-screen bloc-bg-texture texture-darken tc-mint-cream" id="bloc-1">
-	<div class="container">
-		<div class="row">
+                <div class="col-sm-12">
+                    <h2 id="titulo" class="text-center mg-md  tc-honeydew">
+                        Albums
+                    </h2>
 
-			<div class="col-sm-12">
-				<h2 class="text-center mg-md  tc-honeydew">
-					Albums
-				</h2>
-				<div class="text-center">
-                    <btn id="startButton" class="btn btn-d   btn-lg btn-rd animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime"></span></btn>
-                </div>
-		    </div>
-        </div>
-
-        <div id="errorBalloon" class="balloon">
-        </div>
-
-        <div id="imageGridAll" class="row voffset animated vanishIn" style="padding-top: 9%">
-
-            {% for album in albums %}
-                {% comment %}{% if image.id_multimedia == ""  %}{% endcomment %}
-                <div class="col-sm-3">
-                    <a href="{% url "albumsGalleryDetailView" album.slug %}"><img src="{{ album.thumbnail.url }}" data-src="{{ album.thumbnail.url }}" class="img-responsive lazyload" /></a>
-                    <h3 class="mg-md tc-mint-cream">
-                        {{ album.titulo }}
-                    </h3>
-                    {{ album.descripcion }}
-                    {% if album.address %}
-                    <div class="description">
-                       <i class="fas fa-map-marked-alt"></i> Ubicación: {{ album.address }}
+                    <div id="micBtn" class="text-center">
+                        <btn id="startButton" class="animated pulse-hvr" onclick="startButton(this)"><span class="ion ion-android-microphone icon-lg icon-electric-lime" data-toggle="tooltip" title="" data-original-title="Pulsa para empezar a hablar"></span></btn>
+                        <div id="infoBalloon"></div>
                     </div>
-                {% endif %}
                 </div>
-            {% endfor %}
+            </div>
+        </div>
 
-		</div>
-
-
-
-		</div>
-
-	</div>
+        <div class="container b-divider">
 
 
+            <div id="imageGridAll" class="row voffset animated vanishIn albumGallery" style="margin: 8em 2em 4em 2em">
+                <div class="row">
+                    {% for album in albums %}
+                    <div class="col-sm-3">
+                        <a href="{% url "albumsGalleryDetailView" album.slug %}"
+                           data-lightbox="{{ album.thumbnail.url }}"
+                           data-caption="{{ album.titulo }}"
+                           data-frame="fullscreen-lb"
+                           data-gallery-id="gallery-1"
+                           data-type="album">
+                            <img src="{{ album.thumbnail.url }}"
+                                 data-src="{{ album.thumbnail.url }}"
+                                 class="thumbnail img-responsive lazyload animated pulse-hvr"  />
+                        </a>
+                        <h3 class="mg-md tc-mint-cream titulo">
+                            {{ album.titulo }}
+                        </h3>
+                        {{ album.descripcion }}
+                        {% if album.address %}
+                            <div class="description">
+                                <i class="fas fa-map-marked-alt"></i> Ubicación: {{ album.address }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
 
-</div>
-<!-- bloc-1 END -->
 
-        <div class="text-success" style="display: none;">
-            <h2>Result</h2>
-            <pre id="result"></pre>
 
         </div>
+
+    </div>
+    <!-- bloc-1 END -->
+
+    <script>
+        $(document).ready(function () {
+            $('img.img-responsive:first').addClass('focus');
+
+            //document.querySelector('btn').addEventListener('click', function() {
+             //   audio_context.resume().then(() => {
+              //      console.log('Playback resumed successfully');
+  //});
+//});
+        });
+    </script>
 
 {% endblock %}

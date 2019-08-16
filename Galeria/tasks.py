@@ -1,5 +1,6 @@
 from __future__ import unicode_literals, absolute_import
 from celery import shared_task
+from celery.result import AsyncResult
 from Galeria.SpeechDetector import MODEL_DIR
 #from Galeria.views import decoder
 import Galeria.models
@@ -9,13 +10,14 @@ import os
 from django.http import JsonResponse
 
 
-@shared_task
 def check_dictionary(word):
     file = io.open(os.path.join(MODEL_DIR, 'es.dict'), "r", encoding="utf-8")
     encontrado = 0
     if (file != FileNotFoundError):
         for line in file:
             if (word == line.split(" ")[0]):
+                #print(word)
+                #print(line.split(" ")[0])
                 encontrado = 1
                 break
         file.close()
@@ -59,20 +61,27 @@ def add_keyword_to_dict(keyword):
 
 
 @shared_task
-def update_grammar(keyword):
+def update_grammar(keyword, geolocation=False):
     keyword = keyword.lower()
     file = io.open(os.path.join(MODEL_DIR, 'grammar.jsgf'), "r", encoding="utf-8")
     tmpfile = io.open(os.path.join(MODEL_DIR, 'grammar.jsgf.tmp'), "w", encoding="utf-8")
+    tag = '<keyTag>'
+    if geolocation:
+        tag = '<ubication>'
     if file != FileNotFoundError:
         for line in file:
-            if line.startswith('<keyTag>'):
-                tmpfile.write(line[:-4] + " | " + keyword + ")*;\n")
+            if line.startswith(tag) and line.find(keyword) == -1:
+                if line.endswith("()*;"):    # Si es la primera linea no escribo el separador
+                    tmpfile.write(line[:-4] + keyword + ")*;\n")
+                else:
+                    tmpfile.write(line[:-4] + " | " + keyword + ")*;\n")
             else:
                 tmpfile.write(line)
         file.close()
         tmpfile.close()
         shutil.copy(tmpfile.name, file.name)
         os.remove(os.path.join(MODEL_DIR, 'grammar.jsgf.tmp'))
+        #decoder.set_grammar('grammar', os.path.join(MODEL_DIR, 'grammar.jsgf'))
         # set_grammar("grammar", GRAMMAR)
     else:
         raise IOError("No se ha encontrado ningún diccionario. Póngase en contacto con el administrador.")
