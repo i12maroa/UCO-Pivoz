@@ -4,33 +4,41 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from Galeria.models import RegularUser, RFIDMiddleware, AdminUser
-from Galeria.SimpleMFRC522 import SimpleMFRC522
-from PiVoz.settings import BASE_DIR
-#from Galeria.views import get_client_ip
 from ipware import get_client_ip
 from django.http import JsonResponse
-from django.middleware.csrf import get_token
 
 
-import io
-import shutil
-import os
+
 import secrets
-from django.views.decorators.csrf import csrf_protect
 
 
+# Vista de menu principal
 @login_required()
 def index(request):
     return render_to_response('index.html', locals(), RequestContext(request))
 
-
+# Vista de página de perfil
 @login_required()
 def profile(request):
     usuario = RegularUser.objects.get(pk=request.user)
     admins = usuario.get_admin_user()
     return render_to_response("profile.html", locals(), RequestContext(request))
 
+
 def recibir_rfid(request):
+    """ Función para recibir el código RFID y generar el Token de acceso a la aplicación
+
+                            Parameters
+                            ----------
+                            request:
+                                Objeto HTTPRequest
+
+                            Returns
+                            ------
+                            string
+                                Token de acceso
+
+                    """
     if request.method == 'POST':
         rfid_id = request.POST.get('rfid_id')
         try:
@@ -55,6 +63,20 @@ def recibir_rfid(request):
 
 
 def rfid_login(request, access_token):
+    """ Vista de inicio de sesión mediante RFID. Autentica al usuario mediante código RFID haciendo uso del backend
+    RFIDBackend.
+
+                            Parameters
+                            ----------
+                            request: HTTPRequest
+                                petición del usuario
+
+                            Returns
+                            ------
+                            request
+                                Redirige al usuario al menú principal de Pivoz
+
+                    """
     # TODO: Mostrar el mensaje de error en caso de que haya un usuario autenticado y otro distinto intente iniciar sesión
     if request.user.is_authenticated:
         try:
@@ -97,6 +119,19 @@ def rfid_login(request, access_token):
 
 
 def my_login(request):
+    """ Función de login. Permite autenticar un usuario mediante nombre de usuario y contraseña
+
+                            Parameters
+                            ----------
+                            request: HTTTPRequest Object
+                                Petición del usuario
+
+                            Returns
+                            ------
+                            request
+                                Redirige al usuario al menú principal de Pivoz
+
+                    """
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -110,88 +145,12 @@ def my_login(request):
                 else:
                     return HttpResponseRedirect(reverse('home'))
             else:
-                messages.warning(request, "Tu cuenta no está activada. Por favor revisa tu correo electrónico antes de iniciar sesión.")
+                messages.warning(request, "Tu cuenta no está activada. Por favor revisa tu correo electrónico antes de"
+                                          " iniciar sesión.")
         else:
             messages.error(request, "El nombre de usuario o contraseña son incorrectos")
             return HttpResponseRedirect(reverse('home'))
     else:
         return render(request, 'registration/login.html')
-    # if request.method=='POST':
-    #     rfid = request.POST.get('rfid_id')
-    #     # client_ip = request.POST.get('client_addr')
-    #     # print("rfid:" + rfid)
-    #     # file = io.open(os.path.join(BASE_DIR, 'rfid.txt'), "w")
-    #     # if (file != FileNotFoundError):
-    #     #     file.write(rfid+';'+str(client_ip))
-    #     #     file.close()
-    #     # else:
-    #     #     pass
-    #     user = authenticate(request, rfid=rfid)
-    #     if user is not None:
-    #         login(request, user)
-    #         print("Logueado")
-    #         return HttpResponseRedirect(reverse('home'))
-    #     else:
-    #         messages.error(request, "No existe ningún usuario con ese código. Asegúrese de que su usuario tiene un código RFID asociado e inténtelo de nuevo")
-    #         return HttpResponseRedirect(reverse('RFIDlogin'))
-    # else:
-    #     client_ip, is_routable = get_client_ip(request)
-    #     print(client_ip)
-    #     return render(request, 'registration/login.html', {'cliente':client_ip})
 
-# def rfid_middleware(request):
-#     if request.method == 'POST':
-#         rfid = request.POST.get('rfid_id')
-#         ip = request.POST.get('client_addr')
-#
-#         with open('rfid_txt', 'w') as inputFile:
-#             inputFile.write(rfid+';'+ip+';'+token)
-#             inputFile.close()
-#             #return JsonResponse({'access_token':token})
-#     else:
-#         client_ip, is_routable = get_client_ip(request)
-#         print("get_client_ip: " + str(client_ip))
-#         try:
-#             file = open('rfid.txt', 'r+')
-#             line = file.read()
-#             rfid_id = line.split(';')[0]
-#             ip = line.split(';')[1]
-#             token = line.split(';')[2]
-#             file.truncate(0)
-#             file.close()
-#             os.remove('rfid.txt')
-#             return JsonResponse({'rfid_id': rfid_id, 'ip': ip, 'token': token, 'client_ip': client_ip})
-#         except FileNotFoundError:                       # En caso de que el fichero no está creado quiere decir que es el primer acceso por el cliente, solicitando el token de acceso.
-#             #return JsonResponse({'access_token': token})
-#             token = secrets.token_hex(20)
-#             response = render(request, 'registration/login.html', {'cliente': client_ip})
-#             response.set_cookie('access_token', token, 60)
-#             return response
-
-
-
-
-
-
-#return render(request, 'registration/login.html')
-
-
-# def my_login(request):
-#     error = ""
-#     if request.method == 'POST':
-#         username = request.POST.get('username')
-#         password = request.POST.get('password')
-#         user = authenticate(username=username, password=password)
-#         if user is not None:
-#             if user.is_active:
-#                 login(request, user)
-#                 if user.is_staff:
-#                     return redirect(reverse('admin:index'))
-#                 else:
-#                     return redirect(reverse('home'))
-#             else:
-#                 error = "El usuario no está activo. Por favor, revise su correo electrónico y verifique su cuenta."
-#         else:
-#             error = "Nombre de usuario o contraseña no válidos"
-#     return render_to_response('registration/login.html',  locals(), RequestContext(request))
 

@@ -6,9 +6,8 @@ from django.contrib.auth.models import Group
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
-from django.forms.models import BaseInlineFormSet
 from django_registration.forms import RegistrationForm
-from django.utils.text import slugify
+
 
 
 
@@ -33,39 +32,6 @@ class ImageForm(forms.ModelForm):
 
 class ShareUserForm(forms.Form):
     administrador = forms.CharField(label='Administrador con el que quiere compartir el usuario', max_length=100)
-
-
-# class AlbumForm(forms.ModelForm):
-#
-#     def __init__(self, *args, **kwargs):
-#         self.request = kwargs.pop('request', None)
-#         return super(AlbumForm, self).__init__(*args, **kwargs)
-#
-#     def save(self, *args, **kwargs):
-#         kwargs['commit']=False
-#         obj = super(AlbumForm, self).save(*args, **kwargs)
-#         if self.request:
-#             obj.created_by = self.request.user
-#             obj.slug = slugify(self.titulo)
-#         obj.save()
-#         return obj
-
-# class VideoForm(forms.ModelForm):
-#     class Meta:
-#         model = Video
-#         fields = ['titulo', 'descripcion', 'album', 'keyword', 'slug', 'fichero_video']
-#
-#     def clean(self):
-#         cleaned_data = self.cleaned_data
-#         file = cleaned_data.get("fichero_video")
-#         file_exts = ('.mp4', )
-#
-#         if file is None:
-#             raise forms.ValidationError("Por favor, selecciona un video")
-#
-#         if not file.content_type in file_exts
-
-
 
 
 # Django-Registration Custom User Model
@@ -135,7 +101,6 @@ class UserChangeForm(forms.ModelForm):
     , but replaces the password field with admin's password
     hash display field"""
 
-    # password = ReadOnlyPasswordHashField()
     password = ReadOnlyPasswordHashField(label=("Contraseña"),
                                          help_text=("Las contraseñas sin procesar no se almacenan, por lo que no hay "
                                                     "forma de ver la contraseña de este usuario, pero puede cambiarla "
@@ -171,9 +136,6 @@ class UserChangeForm(forms.ModelForm):
 class RegularUserCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repita contraseña', widget=forms.PasswordInput)
-
-    # validate_password(str(password1), user=None, password_validators=None)
-    # password_validators_help_texts(password_validators=None)
 
     class Meta:
         model = RegularUser
@@ -213,8 +175,6 @@ class AdminCreationForm(forms.ModelForm):
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repita Contraseña', widget=forms.PasswordInput)
 
-    # usuarios = forms.CharField(label= 'Usuarios', widget=forms.SelectMultiple(choices=RegularUser.objects.all()))
-
     class Meta:
         model = AdminUser
         fields = ('username',
@@ -236,9 +196,6 @@ class AdminCreationForm(forms.ModelForm):
             raise forms.ValidationError("Las contraseñas no coinciden")
         return password2
 
-    # def _save_m2m(self):
-    #     user = super().save(commit=False)
-    #     self.instance.user_set = self.cleaned_data['user']
 
     def save(self, commit=True):
         # Save the commit password in hashed form
@@ -257,10 +214,6 @@ class AdminCreationForm(forms.ModelForm):
         if created:
             grupo = Group.objects.get(name="Administradores")
             grupo.user_set.add(instance)
-
-
-
-
 
 
 

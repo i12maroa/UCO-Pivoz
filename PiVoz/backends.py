@@ -5,6 +5,7 @@ from Galeria.models import RegularUser
 
 
 class RFIDAuthentication:
+    """ Clase que permite autenticar a un usuario mediante código RFID. Retorna un objeto RegularUser """
     def authenticate(self, request,  rfid):
         try:
             usuario = RegularUser.objects.get(rfid=rfid)

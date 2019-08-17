@@ -15,22 +15,30 @@ Including another URLconf
 """
 
 from django.urls import path, re_path
-from .views import image_gallery, video_gallery, music_gallery, radio, record_web_audio, upload, album_detail, \
+from .views import image_gallery, video_gallery, music_gallery, radio, upload, album_detail, \
     album_gallery, read_rfid, delete_rfid, share_user
 
-#app_name = 'galeria'
+app_name = 'galeria'
 urlpatterns = [
+    # Galería de imágenes
     path('images/', image_gallery, name="imageGallery"),
+    # Galería de videos
     path('videos/', video_gallery, name="videoGallery"),
+    # Musica
     path('music/', music_gallery, name="musicGallery"),
+    # Galeria de álbumes
     path('albums/', album_gallery, name="albumsGallery"),
+    # Radios
     path('music/radio', radio, name="radios"),
-    path('recorder/', record_web_audio, name="recorder"),
+    # Procesar audio de voz
     path('uploadAudio/', upload, name="uploadAudio"),
+    # Contenido de álbumes
     path('albumImage/<slug:slug>/', album_detail, name="albumsGalleryDetailView"),
+    # Leer RFID
     re_path(r'^RFID/(?P<user>\d+)/$', read_rfid, name="ReadRFID"),
+    # Borrar código RFID
     re_path(r'^deleteRFID/(?P<user>\d+)/$', delete_rfid, name="deleteRFID"),
+    # Compartir Usuario
     re_path(r'^user/share/(?P<user>\d+)/$', share_user, name="shareUser"),
-
 
 ]

@@ -2,58 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="476b5f67-bf9c-42de-81b3-2e96a32c610a" name="Default" comment="Update Mapping Directory.&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Added support for Heroku deployment&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PiVoz.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PiVoz.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/tony.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/tony.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/tasks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/validators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Galeria/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Galeria/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiVoz/backends.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiVoz/backends.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiVoz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiVoz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiVoz/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiVoz/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PiVoz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/PiVoz/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speech/model/es.dict" beforeDir="false" afterPath="$PROJECT_DIR$/Speech/model/es.dict" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Speech/model/grammar.jsgf" beforeDir="false" afterPath="$PROJECT_DIR$/Speech/model/grammar.jsgf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/files/img/DSC_0261_o4jB32O.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/files/img/DSC_0949-2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/img/avatars/face-old-man-profile-avatar-of-the-grandfather-vector-187257361.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/thumbs/DSC_4820-z1_2X0KrQI.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/thumbs/Video-Overlay.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/thumbs/dlanor-s-703975-unsplash_1gB6lRE.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/thumbs/speaker-512_EQwOQ14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/users/admin2/albums/Mezquita de Córdoba/portada/MEZQUITA_CATEDRAL_CORDOBA_AMPLIACION_ALMANZOR_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pivoz_nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/pivoz_nginx.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/radio.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/radio.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/imprimir.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/rPiMedia_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/rPiMedia_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/howler_js/radio.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/howler_js/radio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/pivoz.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/pivoz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/recorder/recorderJS_example.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/base_site.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base_site.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/albums.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/albums.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/django_registration/activation_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/django_registration/activation_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/django_registration/registration_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/django_registration/registration_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/fotos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/fotos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/howler_radio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/howler_radio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/musica.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/musica.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/logged_out.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/logged_out.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/videoGallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/videoGallery.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,9 +43,9 @@
     <session id="-78765406">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="199" />
+          <entry key="project.closed" value="200" />
           <entry key="project.open.time.10" value="40" />
-          <entry key="project.open.time.11" value="37" />
+          <entry key="project.open.time.11" value="38" />
           <entry key="project.open.time.12" value="29" />
           <entry key="project.open.time.13" value="21" />
           <entry key="project.open.time.14" value="12" />
@@ -117,7 +66,7 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="4" />
           <entry key="project.open.time.9" value="25" />
-          <entry key="project.opened" value="202" />
+          <entry key="project.opened" value="203" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -135,7 +84,7 @@
           <entry key="django-admin" value="1" />
           <entry key="gif" value="2" />
           <entry key="gitattributes" value="1" />
-          <entry key="gitignore" value="4" />
+          <entry key="gitignore" value="5" />
           <entry key="groovy" value="1" />
           <entry key="html" value="231" />
           <entry key="ico" value="2" />
@@ -173,7 +122,7 @@
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="82" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="135" />
+          <entry key="PLAIN_TEXT" value="136" />
           <entry key="Profiler Session" value="2" />
           <entry key="Python" value="469" />
           <entry key="RNG Compact" value="1" />
@@ -221,15 +170,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/style.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -311,13 +251,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Galeria/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="-222">
               <folding>
                 <element signature="e#0#74#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -476,7 +425,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -522,6 +470,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -681,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553022172209</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update Mapping Directory.&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Added support for Heroku deployment&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project">
+      <created>1565994297133</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565994297133</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -701,7 +657,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.31744748" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49859944" visible="true" weight="0.32229403" />
       <window_info id="Structure" order="1" sideWeight="0.5014006" side_tool="true" weight="0.22374798" />
       <window_info id="Favorites" order="2" sideWeight="0.50091076" side_tool="true" weight="0.14378029" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -713,7 +669,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.23529412" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32997987" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.6502423" visible="true" weight="0.09315068" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.6502423" visible="true" weight="0.49863014" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.26655897" side_tool="true" weight="0.33193278" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32739726" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.34246576" />
@@ -781,9 +737,9 @@
     </ignored-roots>
     <MESSAGE value="Update Mapping Directory." />
     <MESSAGE value="Deleted wav files. Added procfile for Heroku Deployment. Fixed video lightbox" />
-    <MESSAGE value="Update Mapping Directory.&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Added support for Heroku deployment&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project" />
     <MESSAGE value="Estado del proyecto: preparado para usar SSL. Desplegado en www.ucopivoz.com&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project&#10;+ Disabled CORS security&#10;&#10;&#10;### Admin.py ###&#10;&#10;+ Added actions buttons to admin models.&#10;+ Added checktick to Regular User to know if has rfid&#10;+ Added n elements field to Album Admin&#10;&#10;### Galeria/Models.py ###&#10;&#10;+ Modified ImageField to optimize image uploads&#10;- Delete image_height and image_width from Album model&#10;&#10;### Galeria/SpeechDetector.py ###&#10;&#10;+ Modified model_dir and grammar path.&#10;&#10;### Galeria/urls.py ###&#10;&#10;+ Added ReadRFID url&#10;&#10;### Galeria/views.py ###&#10;&#10;+ Added messages&#10;+ Temporally remove decode_speech from celery queue&#10;+ Added function to get client IP&#10;+ Added read rfid function&#10;&#10;&#10;### views.py ###&#10;&#10;+ Added rfid login function&#10;+ Added messages&#10;&#10;### Speech/model/grammar.jsgf ###&#10;&#10;+ Added keyword &quot;pivoz&quot; to grammar&#10;&#10;### Static/img ###&#10;&#10;+ Modified brand logo&#10;&#10;### templates/logged_out.html ###&#10;&#10;+ Change logo&#10;&#10;### templates/login.html ###&#10;&#10;+ Modified logo&#10;+ Added messages&#10;+ Added hidden form to support rfid login&#10;+ Added AJAX calls to get RFID from flask client" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estado del proyecto: preparado para usar SSL. Desplegado en www.ucopivoz.com&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project&#10;+ Disabled CORS security&#10;&#10;&#10;### Admin.py ###&#10;&#10;+ Added actions buttons to admin models.&#10;+ Added checktick to Regular User to know if has rfid&#10;+ Added n elements field to Album Admin&#10;&#10;### Galeria/Models.py ###&#10;&#10;+ Modified ImageField to optimize image uploads&#10;- Delete image_height and image_width from Album model&#10;&#10;### Galeria/SpeechDetector.py ###&#10;&#10;+ Modified model_dir and grammar path.&#10;&#10;### Galeria/urls.py ###&#10;&#10;+ Added ReadRFID url&#10;&#10;### Galeria/views.py ###&#10;&#10;+ Added messages&#10;+ Temporally remove decode_speech from celery queue&#10;+ Added function to get client IP&#10;+ Added read rfid function&#10;&#10;&#10;### views.py ###&#10;&#10;+ Added rfid login function&#10;+ Added messages&#10;&#10;### Speech/model/grammar.jsgf ###&#10;&#10;+ Added keyword &quot;pivoz&quot; to grammar&#10;&#10;### Static/img ###&#10;&#10;+ Modified brand logo&#10;&#10;### templates/logged_out.html ###&#10;&#10;+ Change logo&#10;&#10;### templates/login.html ###&#10;&#10;+ Modified logo&#10;+ Added messages&#10;+ Added hidden form to support rfid login&#10;+ Added AJAX calls to get RFID from flask client" />
+    <MESSAGE value="Update Mapping Directory.&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Added support for Heroku deployment&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Mapping Directory.&#10;&#10;++++++++  New Python Version : update from 3.6.X to 3.7.X +++++++++&#10;&#10;### Admin.py ###&#10;&#10;+ Add filter qs for fields in models.&#10;+ Remove save_formset method from RegularUserAdmin Class, Modified save_model&#10;&#10;### Models.py ###&#10;&#10;- Removed slug field from Image Class&#10;- Remove save_method from Image Class&#10;- Remove save_mehtod from Keyword Class&#10;- Added custom regex validation to Keyword.keyword&#10;&#10;### Signals.py ###&#10;&#10;+ Added new signal for update grammar file in post_delete keyword&#10;&#10;### SpeechDetector.py ###&#10;&#10;+ Added get_search function&#10;+ Added set_keyword_spotted function&#10;&#10;### Tasks.py ###&#10;&#10;+ Added remove_keyword function&#10;&#10;### Validator.py ###&#10;&#10;+ Added new validatos to validate_keyword&#10;&#10;### Views.py ###&#10;&#10;+ In videoGallery view: Modified initial queryset&#10;+ Added decode_speech function to Celery task queue&#10;+ Modified matching string of image-menu&#10;+ Modified matching string of Subir Vol, Bajar vol and menu principal&#10;&#10;### Settings.py ###&#10;&#10;+ Modified Allowed Host to ['*']&#10;+ Added support for Heroku deployment&#10;+ Set up celery settings&#10;+ Modified Login URL&#10;+ Added Static root path to project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -797,9 +753,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Galeria/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Galeria/validators.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -889,13 +842,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/virtualenv/lib/python3.7/site-packages/django/db/models/fields/files.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/PiVoz/settings.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1059,10 +1006,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Galeria/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="-222">
           <folding>
             <element signature="e#0#74#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
         </state>
       </provider>
     </entry>

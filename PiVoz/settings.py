@@ -21,23 +21,23 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = *********
+SECRET_KEY = '******************'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ucopivoz.com', 'www.ucopivoz.com','*']
+ALLOWED_HOSTS = ['ucopivoz.com', 'www.ucopivoz.com',]
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 
 # SSL Config
 
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-# SECURE_SSL_REDIRECT = True
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 SESSION_EXPIRE_SECONDS = 3000  # 5 minutes
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'jet.dashboard',
     'jet_django',
     'corsheaders',
-    #'django_admin_row_actions',                 # https://github.com/DjangoAdminHackers/django-admin-row-actions
     'django_celery_results',
     'django_extensions',
     'sendgrid',                                 # https://github.com/sendgrid
@@ -67,8 +66,6 @@ INSTALLED_APPS = [
     'django_cleanup.apps.CleanupConfig',        # https://github.com/un1t/django-cleanup
     'phonenumber_field',                        # https://github.com/stefanfoulis/django-phonenumber-field
     'imagekit',                                 # https://github.com/matthewwithanm/django-imagekit
-    #'simple_history',
-    #'storages',
 ]
 
 MIDDLEWARE = [
@@ -105,8 +102,6 @@ TEMPLATES = [
     },
 ]
 
-#WSGI_APPLICATION = 'PiVoz.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -118,35 +113,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'PiVoz',
-#         'USER': 'name',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-
-
-# # AWS S3 Config
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-#     'CacheControl': 'max-age=94608000',
-# }
-#
-# AWS_STORAGE_BUCKET_NAME = 'pivoz'
-# AWS_S3_REGION_NAME = 'eu-west-1'  # e.g. us-east-2
-# AWS_ACCESS_KEY_ID = ***********
-# AWS_SECRET_ACCESS_KEY = *************
-#
-# # Tell django-storages the domain to use to refer to static files.
-# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-#
-# # Tell the staticfiles app to use S3Boto3 storage when writing the collected static files (when
-# # you run `collectstatic`).
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -168,27 +134,27 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTHENTICATION_BACKENDS = [
     'PiVoz.backends.RFIDAuthentication',
+    # Backend para autenticación por RFID
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 
+#--------------------------------------------  API KEYS --------------------------------------------#
+#                                                                                                   #
+#                 Atención. Por cuestiones de seguridad no se mostrarán las API KEYS              #
+#                                                                                                   #
+#---------------------------------------------------------------------------------------------------#
 
 # Email Configuration
 # Sendgrid : https://sendgrid.com/docs/for-developers/sending-email/django/
 
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-<<<<<<< HEAD
-SENDGRID_API_KEY = "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"
-=======
-SENDGRID_API_KEY = "******"
->>>>>>> aeb6b6b098b82e0ddaf4c78697a4a5345a792a9c
+SENDGRID_API_KEY = "**************************"
 
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = 'sendgrid_username'
-# EMAIL_HOST_PASSWORD = 'sendgrid_password'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+# Django Google Maps API KEY
+
+GOOGLE_MAPS_API_KEY = '**************'
 
 """ Configuration of Django Registration """
 
@@ -196,25 +162,21 @@ ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window
 REGISTRATION_OPEN = True
 
 
+
 GRAPH_MODELS = {
   'all_applications': False,
   'group_models': True,
 }
 
-# Django Google Maps API KEY
 
-GOOGLE_MAPS_API_KEY = '*******'
 
 # Celery Config
-#CELERY_TASK_SERIALIZER = 'json'
+
 CELERY_RESULT_BACKEND = 'django-db'
 #CELERY_BROKER_URL = 'django://'
 #INSTALLED_APPS += ('kombu.transport.django', )
 
-# Heroku Config
 
-# db_from_env = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(db_from_env)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

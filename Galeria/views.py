@@ -22,40 +22,52 @@ import datetime
 # Create your views here.
 
 
-def start_new_thread(f):
-    def decorator(*args, **kwargs):
-        t = Thread(target=f, args=args, kwargs=kwargs)
-        t.daemon = True
-        t.start()
-
-    return decorator
 
 
+# Creamos una instancia SpeechDetector()
 decoder = SpeechDetector()
 
 
-# @start_new_thread
+
+# Inicializamos el decodificador. El decodificador es una instancia de la clase SpeechDetector() y será el encargado de
+# reconocer los comandos de voz
 
 def init_decoder():
     decoder.__init__()
     decoder.set_grammar("grammar", GRAMMAR)
     decoder.set_search("grammar")
 
-
 init_decoder()
 
-
+# Señal de Django que se ejecuta después de guardar una palabra clave. Reinicializa la configuración del decodificador
+# para que cargue el nuevo fichero de gramática.
 @receiver(post_save, sender=Keyword)
 def update_grammar(sender, **kwargs):
     decoder.set_grammar("grammar", GRAMMAR)
 
-
-# @receiver(post_save, sender=Album)
-# def update_grammar(sender, **kwargs):
-#     decoder.set_grammar("grammar", GRAMMAR)
+# Señal de Django que se ejecuta después de guardar una instancia de Album. Reinicializa la configuración del decodificador
+# para que cargue el nuevo fichero de gramática.
+@receiver(post_save, sender=Album)
+def update_grammar(sender, **kwargs):
+    decoder.set_grammar("grammar", GRAMMAR)
 
 
 def video_serializer(video, speech):
+    """ Función para serializar videos. Permite crear un objeto JSON con los objetos Video
+
+            Parameters
+            ----------
+                video: Video Object
+                    video para serializar
+                speech: string
+                    comando de voz reconocido
+
+            Returns
+             ------
+                dict
+                    Diccionario JSON serializado
+
+    """
     keylist = []
     for key in video.keyword.all():
         keylist.append(key.keyword)
@@ -64,6 +76,21 @@ def video_serializer(video, speech):
 
 
 def image_serializer(image, speech):
+    """ Función para serializar imágenes. Permite crear un objeto JSON con los objetos Imagen
+
+                Parameters
+                ----------
+                    image: Image Object
+                        imagen para serializar
+                    speech: string
+                        comando de voz reconocido
+
+                Returns
+                 ------
+                    dict
+                        Diccionario JSON serializado
+
+        """
     keylist = []
     for key in image.keyword.all():
         keylist.append(key.keyword)
@@ -73,12 +100,41 @@ def image_serializer(image, speech):
 
 
 def radio_serializer(radio, speech):
+    """ Función para serializar radios. Permite crear un objeto JSON con los objetos Radio
+
+                Parameters
+                ----------
+                    radio: Radio Object
+                        radio para serializar
+                    speech: string
+                        comando de voz reconocido
+
+                Returns
+                 ------
+                    dict
+                        Diccionario JSON serializado
+
+        """
     return {'speech': speech, 'type': "radio", 'id': radio.id, 'titulo': radio.nombre,
             'src': radio.url}
 
 
 # TODO: Add decode_speech to celery queue
 def decode_speech(audio_file):
+    """ Permite decodificar un fichero de audio y transcribirlo a texto
+
+                Parameters
+                ----------
+                    audio_file: FileSystemStorage
+                        archivo de audio con el comando de voz
+
+
+                Returns
+                 ------
+                    string
+                        Comando reconocido
+
+        """
     decoder.decode_phrase(audio_file)
 
     if decoder.get_hyp() == "":
@@ -91,6 +147,23 @@ def decode_speech(audio_file):
 
 
 def process_speech(request, recognized_audio):
+    """ Función para procesar el comando de voz
+
+                Parameters
+                ----------
+                    request: HTTPRequest Object
+                        petición del usuario
+                    recognized_audio: string
+                        comando de voz reconocido
+
+                Returns
+                 ------
+                    dict
+                        Diccionario de objetos
+                    string
+                        comando
+
+        """
     keylist = []
     if recognized_audio.find("todas las fotos") != -1:
         imagenes_filtered = Galeria.models.Imagen.objects.all().filter(album__usuario=request.user)
@@ -107,14 +180,10 @@ def process_speech(request, recognized_audio):
             or recognized_audio.find('ver fotografías') != -1 \
             or recognized_audio.find('mostrar fotografías') != -1:
 
-        # for word in recognized_audio.split(" "):
-        #     if word in Galeria.models.Keyword.objects.all():
-        #         keylist.append(word)
         for key in Galeria.models.Keyword.objects.all():
             if recognized_audio.find(key.keyword.lower()) != -1:
                 keylist.append(key)
 
-        print('Identificado Keyword: ', keylist)
         albums = Galeria.models.Album.objects.filter(keywords__in=keylist, usuario__exact=request.user)
         if albums:
             imagenes_filtered = Galeria.models.Imagen.objects.filter(album__in=albums)
@@ -190,6 +259,19 @@ def process_speech(request, recognized_audio):
 
 @login_required
 def upload(request):
+    """ Vista para subir el fichero de audio y responder la petición AJAX. En esta parte respondemos la petición AJAX
+    con el comando reconocido o bien con los objetos filtrados, ya sean Imágenes, Videos o Radios.
+
+                Parameters
+                ----------
+                    request: HTTPRequest
+
+                Returns
+                 ------
+                    JsonResponse
+                        Diccionario de objetos en formato JSON
+
+        """
     print("Método: ", request.method)
     print("Ajax: ", request.is_ajax())
     if request.method == 'POST':
@@ -199,11 +281,6 @@ def upload(request):
             fs = FileSystemStorage()
             filename = fs.save(record_audio.name + ".wav", record_audio)
             speech = decode_speech(filename)
-            # speech = "pivoz siguiente"
-            # speech = speech.get(timeout=1)
-            # run = decode_speech.delay(filename)
-            # speech = decode_speech.AsyncResult(run.id)
-            # speech = speech.get()
             # Eliminamos el audio que ya ha sido procesado
             audio = record_audio.name + '.wav'
             fs.delete(audio)
@@ -241,8 +318,7 @@ def upload(request):
                     return JsonResponse({'comando': 'profile', 'speech': speech})
                 if (process_speech(request, speech)['objects']):
                     objects = process_speech(request, speech)['objects']  # Guardo los e. multimedia obtenidos
-                    contentType = process_speech(request, speech)['type']  # Type 0: Imagenes // Type 1: Videos
-                    # data = serializers.serialize('json', objects, fields=('titulo', 'fichero_imagen'))
+                    contentType = process_speech(request, speech)['type']  # Type 0: Imagenes // Type 1: Videos // Type 2: Radio
                     if contentType == 0:
                         imagenes = [image_serializer(imagen, speech) for imagen in objects]
                         return HttpResponse(json.dumps(imagenes), content_type='application/json')
@@ -262,6 +338,7 @@ def upload(request):
 
 @login_required()
 def image_gallery(request):
+    """Vista para mostrar las imágenes del usuario"""
     cliente = get_client_ip(request)
     imagenes = Imagen.objects.all().filter(album__usuario=request.user)
     return render_to_response('fotos.html', locals(), RequestContext(request))
@@ -269,34 +346,31 @@ def image_gallery(request):
 
 @login_required()
 def video_gallery(request):
+    """Vista para mostrar los videos del usuario"""
     videos = Video.objects.all().filter(album__usuario=request.user)
     return render_to_response('videoGallery.html', locals(), RequestContext(request))
 
 
 @login_required()
 def music_gallery(request):
+    """Vista para mostrar el menú de música"""
     return render_to_response("musica.html", locals(), RequestContext(request))
 
 
 def album_gallery(request):
+    """Vista para mostrar los álbumes del usuario"""
     list = Album.objects.filter(usuario=request.user)
     return render(request, 'albums.html', {'albums': list})
 
 
 def radio(request):
+    """Vista para mostrar las emisoras de radio del usuario"""
     radios = Radio.objects.all()
     return render_to_response("howler_radio.html", locals(), RequestContext(request))
 
 
-def record_web_audio(request):
-    uploaded_file = open("recording.ogg", "wb")
-    uploaded_file.write(request.body)
-    uploaded_file.close()
-
-    return render_to_response("index.html", locals())
-
-
 def album_detail(request, slug):
+    """Vista para mostrar el contenido de un álbum del usuario"""
     imagenes = Imagen.objects.all().filter(album__slug__iexact=slug)
     videos = Video.objects.filter(album__slug__iexact=slug)
     slug = slug.replace('-', ' ')
@@ -304,6 +378,7 @@ def album_detail(request, slug):
 
 
 def get_client_ip(request):
+    """Devuelve la dirección IP del cliente"""
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
         ip = x_forwarded_for.split(',')[-1].strip()
@@ -313,12 +388,24 @@ def get_client_ip(request):
 
 
 def read_rfid(request, user):
+    """ Vista utilizada para asociar un codigo RFID al usuario
+
+                Parameters
+                ----------
+                    request: HTTPRequest
+                    user: RegularUser Object
+
+                Returns
+                 ------
+                    HttpResponseRedirect
+                        redirección a la página especificada
+
+        """
     usuario = RegularUser.objects.get(pk=user)
     list = []
     for u in RegularUser.objects.all():
         if u.rfid != "":
             list.append(u.rfid)
-            print("Lista:", list)
     for entry in RFIDMiddleware.objects.all():
         if (datetime.datetime.utcnow().replace(tzinfo=utc) - entry.timestamp).total_seconds() < 20:
             if entry.rfid_id in list:
@@ -335,33 +422,28 @@ def read_rfid(request, user):
                    'Por favor, acerca el nuevo código RFID al lector para asociarlo a {0} y vuelva a pulsar Vincular pulsera'.format(
                        usuario.username))
     return HttpResponseRedirect(reverse('admin:Galeria_regularuser_changelist'))
-    # messages.error(request, 'Por favor, acerca el nuevo código RFID al lector para asociarlo a {0}'.format(usuario.username))
-    # return HttpResponseRedirect(reverse('admin:Galeria_regularuser_changelist'))
 
 
-# @staff_member_required
-# def read_rfid22(request, user):
-#     if request.method == 'POST':
-#         usuario = request.POST.get("usuario")
-#         rfid_id = request.POST.get("rfid_id")
-#         print(rfid_id)
-#         print("Usuario: {0} con RFID {1} sera actualizado".format(usuario, rfid_id))
-#         for user in RegularUser.objects.all():
-#             if user.rfid == rfid_id:
-#                 messages.error(request, 'El código RFID {0} ya está asociado a un usuario.'.format(rfid_id))
-#                 return HttpResponseRedirect(reverse('admin:Galeria_regularuser_changelist'))
-#         if usuario is not None and rfid_id != "":
-#             RegularUser.objects.filter(pk=usuario).update(rfid=rfid_id)
-#             messages.success(request, 'El código RFID {0} se ha asociado al usuario {1} con éxito'.format(rfid_id,
-#                                                                                                           usuario.username))
-#             return HttpResponseRedirect(reverse('admin:index'))
-#     else:
-#         client_ip = get_client_ip(request)
-#         print(client_ip)
-#         return render_to_response('read_rfid.html', {'user': user, 'cliente': client_ip})
 
 
+
+@staff_member_required
 def delete_rfid(request, user):
+    """ Elimiar código RFID del usuario
+
+                    Parameters
+                    ----------
+                        request: HTTPRequest
+                        user: RegularUser Object
+                            usuario que va a ser actualizado
+
+                    Returns
+                     ------
+                        HttpResponseRedirect
+                            redirección a la página especificada
+
+            """
+
     usuario = get_object_or_404(RegularUser, pk=user)
     if usuario.rfid != "":
         RegularUser.objects.filter(pk=user).update(rfid="")
@@ -370,8 +452,21 @@ def delete_rfid(request, user):
         messages.warning(request, 'El usuario {0} no tiene ningún código RFID asociado.'.format(usuario.username))
     return HttpResponseRedirect(reverse('admin:Galeria_regularuser_changelist'))
 
-
+@staff_member_required
 def share_user(request, user):
+    """ Permite al administrador compartir un usuario
+
+                    Parameters
+                    ----------
+                        request: HTTPRequest
+                        user: RegularUser Object
+                            usuario que va a ser actualizado
+                    Returns
+                     ------
+                        HttpResponseRedirect
+                            redirección a la página especificada
+
+            """
     if request.method == 'POST':
         form = ShareUserForm(request.POST)
         if form.is_valid():

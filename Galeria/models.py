@@ -249,7 +249,7 @@ class Album(models.Model):
     thumbnail = ProcessedImageField(upload_to=get_upload_path, verbose_name="Portada", spec=ResizeThumbnail)
     address = map_fields.AddressField(max_length=200, verbose_name='Ubicación', blank=True,
                                       help_text="Añade información de la ubicación para localizar "
-                                                "fotos basándote en el sitio donde fueron tomadas. ¿Asombroso verdad?")
+                                                "fotos basándote en el sitio donde fueron tomadas. Asombroso verdad")
     geolocation = map_fields.GeoLocationField(max_length=100, verbose_name="Geolocaclización", blank=True)
     fecha_creacion = models.DateTimeField(verbose_name='Fecha de creación', auto_now_add=True)
     fecha_modificacion = models.DateTimeField(verbose_name='Última edición', auto_now=True)
@@ -329,7 +329,7 @@ class Album(models.Model):
                 """
         return self.imagen_set.count() + self.video_set.count()
 
-    get_n_elements.short_description = "Nº de elementos"
+    get_n_elements.short_description = "Número de elementos"
     get_n_elements.allow_tags = True
 
 @receiver(post_save, sender=Album)

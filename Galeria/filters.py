@@ -2,7 +2,7 @@ import django_filters
 from Galeria.models import *
 
 class AlbumFilter(django_filters.FilterSet):
-
+    """Declara un uevo filtro para buscar álbumes por usuario"""
     class Meta:
         model = Album
         fields = ['id_album', 'titulo', 'descripcion', 'usuario','evento']
